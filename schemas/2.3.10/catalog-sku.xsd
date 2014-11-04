@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+	targetNamespace="http://ws.plimus.com">
+	<xs:include schemaLocation="order.xsd"/>
+	<xs:include schemaLocation="product.xsd"/>
+	<xs:include schemaLocation="custom-parameter.xsd"/>
+	<xs:element name="catalog-sku">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="sku-id" minOccurs="0"/>
+				<xs:element ref="sku-name" />
+				<!-- In the future, the contact name should be deprecated once we deprecate the product WS - we will have only SKUs -->
+				<xs:element ref="contract-name" minOccurs="0"/>
+				<!-- In the future, the product id should be deprecated once we deprecate the product WS - we will have only SKUs -->
+				<xs:element ref="product-id" minOccurs="0"/>
+				<xs:element ref="sku-status" />
+				<xs:element ref="sku-type" />
+				<xs:element ref="pricing-settings" />
+				<xs:element ref="sku-image" />
+				<xs:element ref="sku-buynow-urls" />
+				<xs:element ref="sku-quantity-policy" />
+				<xs:element ref="collect-shipping-address" />
+				<xs:element ref="sku-effective-dates" />
+				<xs:element ref="sku-coupon-settings" />
+				<xs:element ref="sku-custom-parameters" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="pricing-settings">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="charge-policy-type" />
+				<xs:element ref="charge-policy" />
+				<xs:element ref="include-tax-in-price" />
+				<xs:element ref="rounding-price-method" />
+				<xs:element ref="recurring-plan-settings" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="recurring-plan-settings">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="charge-upon-plan-change" />
+				<xs:element ref="grace-period-length" />
+				<xs:element ref="plan-charge-amount-limit" />
+				<xs:element ref="plan-duration-period" />
+				<xs:element ref="plan-max-charge-number-limit" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="charge-policy">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="free-trial" />
+				<xs:element ref="one-time-charge" />
+				<xs:element ref="initial-period"  />
+				<xs:element ref="recurring-period"  />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="free-trial">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="period-length" />
+				<xs:element ref="interval" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="sku-custom-parameters">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="sku-custom-parameter"  minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="sku-custom-parameter">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="url" minOccurs="0" />
+				<xs:element ref="custom-param-id" minOccurs="0" />
+				<xs:element ref="index-number" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="index-number">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="one-time-charge">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="catalog-prices" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="initial-period">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="catalog-prices" />
+				<xs:element ref="period-length" />
+				<xs:element ref="interval" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="recurring-period">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="catalog-prices" />
+				<xs:element ref="period-frequency" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="catalog-prices">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="catalog-price" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="catalog-price">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="base-price" minOccurs="0"/>
+				<xs:element ref="currency" />
+				<xs:element ref="amount" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="sku-effective-dates">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="effective-from" />
+				<xs:element ref="effective-till" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="sku-quantity-policy">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="allow-quantity-change" />
+				<xs:element ref="minimum-quantity" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="sku-buynow-urls">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="buynow-url" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="buynow-url">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="url-description" />
+				<xs:element ref="url" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="sku-coupon-settings">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="sku-coupon-setting" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="url-description">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="sku-image">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="sku-type">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="collect-shipping-address">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="effective-from">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="effective-till">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="allow-quantity-change">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="base-price">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="minimum-quantity">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="buynow1-url">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="sku-initial-price">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="currency" />
+				<xs:element ref="amount" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="sku-recurring-price">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="currency" />
+				<xs:element ref="amount" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="charge-policy-type">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="subscription-plan-frequency">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="subscription-trial-period">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="plan-duration-period">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="charge-upon-plan-change">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="grace-period-length">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="plan-charge-amount-limit">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="currency" />
+				<xs:element ref="amount" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="include-tax-in-price">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="rounding-price-method">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="sku-coupon-setting">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="plan-max-charge-number-limit">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="period-length">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="interval">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="period-frequency">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="number-of-charges">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>

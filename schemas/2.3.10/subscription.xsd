@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+	targetNamespace="http://ws.plimus.com">
+	<xs:include schemaLocation="order.xsd"/>
+	<xs:include schemaLocation="subscription-charge.xsd"/>
+	<xs:element name="subscription">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="subscription-id" />
+				<xs:element ref="status" />
+				<xs:element ref="cancellation-reason" minOccurs="0" />
+				<xs:element ref="underlying-sku-id" />
+				<xs:element ref="shopper-id" />
+				<xs:element ref="recurring-charge" minOccurs="0" />
+				<xs:element ref="credit-card" minOccurs="0" />	
+				<xs:element ref="ecp" minOccurs="0" />
+				<xs:element ref="paypal" minOccurs="0" />
+				<xs:element ref="paypal-subscription" minOccurs="0" />
+				<xs:element ref="catalog-recurring-charge" minOccurs="0" />
+				<xs:element ref="override-recurring-charge" minOccurs="0" />
+				<xs:element ref="coupon" minOccurs="0" />
+				<xs:element ref="charge-frequency" minOccurs="0"/>
+				<xs:element ref="next-charge-date" />
+				<xs:element ref="manual-recurring-info" minOccurs="0"/>
+				<xs:element ref="auto-renew" minOccurs="0"/>
+				<xs:element ref="last-charge-result" minOccurs="0"/>
+				<xs:element ref="subscription-charges" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="subscription-id">
+		<xs:simpleType>
+			<xs:restriction base="xs:long" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="underlying-sku-id">
+		<xs:simpleType>
+			<xs:restriction base="xs:long" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="recurring-charge">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="currency" />
+				<xs:element ref="amount" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="next-charge-date">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+		<xs:element name="catalog-recurring-charge">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="currency" />
+				<xs:element ref="amount" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="override-recurring-charge">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="currency" />
+				<xs:element ref="amount" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="charge-frequency">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>	
+	<xs:element name="auto-renew" type="xs:boolean" />
+	<xs:element name="last-charge-result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="result-code" />
+				<xs:element ref="processor-error-message" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="manual-recurring-info">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="original-reference-number" minOccurs="0"/>
+				<xs:element ref="reminder-number" minOccurs="0"/>
+				<xs:element ref="payment-method" minOccurs="0"/>
+				<xs:element ref="next-payment-url" minOccurs="0"/>
+				<xs:element ref="days-till-cancel" minOccurs="0"/>
+				<xs:element ref="days-till-payment" minOccurs="0"/>
+				<xs:element ref="email-sent" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="days-till-cancel">
+		<xs:simpleType>
+			<xs:restriction base="xs:long" />
+		</xs:simpleType>
+	</xs:element>
+		<xs:element name="days-till-payment">
+		<xs:simpleType>
+			<xs:restriction base="xs:long" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="original-reference-number">
+		<xs:simpleType>
+			<xs:restriction base="xs:long" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="next-payment-url">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="reminder-number">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="email-sent">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="subscription-charges">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="url" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="subscription-charge" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="result-code">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="processor-error-message">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="cancellation-reason">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>
