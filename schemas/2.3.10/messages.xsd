@@ -22,6 +22,7 @@
 	<xs:element name="message">
 		<xs:complexType>
 			<xs:sequence>
+				<xs:element ref="error-name" minOccurs="0"/>
 				<xs:element ref="code" minOccurs="0"/>
 				<xs:element ref="description"/>
 				<xs:element ref="invalid-property" minOccurs="0"/>
@@ -80,6 +81,11 @@
 				<xs:element ref="message-value"/>
 			</xs:sequence>
 		</xs:complexType>
+	</xs:element>
+	<xs:element name="error-name">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
 	</xs:element>
 	<xs:element name="description" type="xs:string"/>
 	<xs:element name="code">

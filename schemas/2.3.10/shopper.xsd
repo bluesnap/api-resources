@@ -46,6 +46,7 @@
 	<xs:element name="shopper-info">
 		<xs:complexType>
 			<xs:sequence>
+				<xs:element ref="shopper-id" minOccurs="0" />
 				<xs:element ref="seller-shopper-id" minOccurs="0" />
 				<xs:element ref="username" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="password" minOccurs="0" maxOccurs="1" />

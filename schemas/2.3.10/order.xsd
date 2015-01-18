@@ -10,6 +10,7 @@
 	<xs:include schemaLocation="ecp-info.xsd"/>
 	<xs:include schemaLocation="shopper.xsd"/>
 	<xs:include schemaLocation="paypal-info.xsd"/>
+	<xs:include schemaLocation="local-bank-transfer-info.xsd"/>
 	<xs:element name="param-value">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
@@ -59,15 +60,23 @@
 				<xs:element ref="shopper-id" minOccurs="0" />
 				<xs:element ref="seller-shopper-id" minOccurs="0" />
 				<xs:element ref="credit-card" minOccurs="0"/>
-				<xs:element ref="ecp" minOccurs="0" />
+				<xs:element ref="ecp" minOccurs="0" />				
 				<xs:element ref="invoice-contact-info" minOccurs="0" />
 				<xs:element ref="paypal" minOccurs="0" />
 				<xs:element ref="wire" minOccurs="0" />
+				<xs:element ref="local-bank-transfer" minOccurs="0" />
 				<xs:element ref="web-info" />
 				<xs:element ref="three-d-authenticated-info" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+	<xs:element name="local-bank-transfer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="bank-country" minOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
 	<xs:element name="post-sale-info">
 		<xs:complexType>
 			<xs:sequence>
@@ -216,6 +225,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="paypal-info" minOccurs="0"/>
+				<xs:element ref="local-bank-transfer-info" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -283,11 +293,16 @@
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
-		<xs:element name="target-balance">
+	<xs:element name="target-balance">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
+	<xs:element name="bank-country">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>	
 	<xs:element name="wire">
     <xs:complexType>
     </xs:complexType>
