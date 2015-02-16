@@ -30,7 +30,7 @@
 			<xs:sequence>
 				<xs:element ref="card-number" minOccurs="0" />
 				<xs:element ref="encrypted-card-number" minOccurs="0" />
-				<xs:element ref="card-last-four-digits" minOccurs="0" />
+				<xs:element ref="card-last-four-digits" minOccurs="0"/>
 				<xs:element ref="card-type" />
 				<xs:element ref="expiration-month" minOccurs="0" />
 				<xs:element ref="expiration-year" minOccurs="0" />
@@ -39,6 +39,7 @@
 				<xs:element ref="start-month" minOccurs="0" />
 				<xs:element ref="start-year" minOccurs="0" />
 				<xs:element ref="issue-number" minOccurs="0" />
+				<xs:element ref="card-fingerprint" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -58,6 +59,11 @@
     </xs:simpleType>
   </xs:element>
 	<xs:element name="card-last-four-digits">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="card-fingerprint">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
