@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+	targetNamespace="http://ws.plimus.com">
+	<xs:include schemaLocation="order.xsd"/>
+	<xs:element name="product">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="product-id" minOccurs="0"/>
+				<xs:element ref="product-status" />
+				<xs:element ref="product-name" />
+				<xs:element ref="product-short-description" />
+				<xs:element ref="product-long-description" />
+				<xs:element ref="product-info-url" />
+				<xs:element ref="product-image" />
+				<xs:element ref="product-merchant-descriptor" />
+				<xs:element ref="product-support-email" />
+				<xs:element ref="product-skus" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="product-skus">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="url" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="product-id">
+		<xs:simpleType>
+			<xs:restriction base="xs:long" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="product-name">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="product-short-description">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="product-long-description">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="product-info-url">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="product-image">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="product-merchant-descriptor">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="product-support-email">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="product-status">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>

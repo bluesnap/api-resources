@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+	targetNamespace="http://ws.plimus.com">
+	<xs:include schemaLocation="order.xsd"/>
+	<xs:element name="order-history">
+
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ordering-shopper" />
+				<xs:element ref="past-orders" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="past-orders">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="url" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="order" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
