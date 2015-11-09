@@ -10,6 +10,8 @@
 				<xs:element ref="sku-name" />
 				<xs:element ref="sku-charge-price" minOccurs="0"
 					maxOccurs="2" />
+				<xs:element ref="trial-days" minOccurs="0"
+					maxOccurs="1" />					
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -27,6 +29,11 @@
 			<xs:restriction base="xs:long" />
 		</xs:simpleType>
 	</xs:element>
+	<xs:element name="trial-days">
+		<xs:simpleType>
+			<xs:restriction base="xs:int" />
+		</xs:simpleType>
+	</xs:element>	
 	<xs:element name="sku-name">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />

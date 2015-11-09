@@ -13,7 +13,10 @@
 				<xs:element ref="contract-name" minOccurs="0"/>
 				<!-- In the future, the product id should be deprecated once we deprecate the product WS - we will have only SKUs -->
 				<xs:element ref="product-id" minOccurs="0"/>
+				<xs:element ref="optional-description" minOccurs="0"/>
 				<xs:element ref="sku-status" />
+				<xs:element ref="inventory" minOccurs="0"/>
+				<xs:element ref="enable-inventory-mgt" minOccurs="0"/>
 				<xs:element ref="sku-type" />
 				<xs:element ref="pricing-settings" />
 				<xs:element ref="sku-image" />
@@ -85,6 +88,16 @@
 	<xs:element name="index-number">
 		<xs:simpleType>
 			<xs:restriction base="xs:decimal" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="inventory">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="enable-inventory-mgt">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean" />
 		</xs:simpleType>
 	</xs:element>
 	<xs:element name="one-time-charge">
@@ -170,6 +183,11 @@
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
+	<xs:element name="optional-description">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>	
 	<xs:element name="sku-image">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
