@@ -164,6 +164,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="order-id" />
+				<xs:element ref="seller-order-id" minOccurs="0"/>
 				<xs:element ref="soft-descriptor" minOccurs="0" />
 				<xs:element ref="ordering-shopper" />
 				<xs:element ref="transaction-payment-info" minOccurs="0"/>	
