@@ -31,7 +31,7 @@
 				<xs:element ref="card-number" minOccurs="0" />
 				<xs:element ref="encrypted-card-number" minOccurs="0" />
 				<xs:element ref="card-last-four-digits" minOccurs="0"/>
-				<xs:element ref="card-type" minOccurs="0"/>
+				<xs:element ref="card-type" />
 				<xs:element ref="expiration-month" minOccurs="0" />
 				<xs:element ref="expiration-year" minOccurs="0" />
 				<xs:element ref="security-code" minOccurs="0" />
