@@ -12,6 +12,12 @@
 	</xs:element>
 	<xs:element name="paypal">
 		<xs:complexType>
+		  <xs:sequence>
+                <xs:element ref="pp-cancel-url" maxOccurs="1"/>
+                <xs:element ref="pp-return-url" maxOccurs="1"/>
+                <xs:element ref="pp-req-confirm-shipping" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="pp-no-shipping" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="paypal-transaction-data">
@@ -19,6 +25,7 @@
 			<xs:sequence>
 				<xs:element ref="pp-transaction-id" />
 				<xs:element ref="pp-subscription-id" />
+				<xs:element ref="pp-billing-agreement-id" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -32,6 +39,7 @@
 			<xs:sequence>
 				<xs:element ref="pp-subscription-id" />
 				<xs:element ref="pp-original-transaction-id" />
+				<xs:element ref="pp-billing-agreement-id" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -45,4 +53,38 @@
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
+	<xs:element name="pp-billing-agreement-id">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	
+    <xs:element name="pp-cancel-url">
+        <xs:simpleType>
+            <xs:restriction base="xs:string" />
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="pp-return-url">
+        <xs:simpleType>
+            <xs:restriction base="xs:string" />
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="pp-req-confirm-shipping">
+        <xs:simpleType>
+            <xs:restriction base="xs:int">
+                    <xs:enumeration value="0" />
+                    <xs:enumeration value="1" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="pp-no-shipping">
+        <xs:simpleType>
+            <xs:restriction base="xs:int">
+                    <xs:enumeration value="0" />
+                    <xs:enumeration value="1" />
+                    <xs:enumeration value="2" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    
 </xs:schema>
