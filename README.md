@@ -1,4 +1,4 @@
 api-schemas
 ===========
 
-.xsd schema files for BlueSnap's REST API
+.xsd schema files for BlueSnap's Extended Payment REST API
