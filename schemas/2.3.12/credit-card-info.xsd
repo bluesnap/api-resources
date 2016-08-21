@@ -8,6 +8,7 @@
 			<xs:sequence>
 				<xs:element ref="billing-contact-info" minOccurs="0" />
 				<xs:element ref="credit-card" />
+				<xs:element ref="pf-token" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -99,6 +100,11 @@
 		</xs:simpleType>
 	</xs:element>
 	<xs:element name="issue-number">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="pf-token">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
