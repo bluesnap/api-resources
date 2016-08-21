@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+		   targetNamespace="http://ws.plimus.com">
+
+	<xs:element name="exchange-rates">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="base-currency"/>
+				<xs:element ref="exchange-rate" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="conversion-rate">
+			<xs:selector xpath="conversion-rate"/>
+			<xs:field xpath="symbol"/>
+		</xs:unique>
+	</xs:element>
+
+	<!-- Exchange rate, https://en.wikipedia.org/wiki/Exchange_rate -->
+	<xs:element name="exchange-rate">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="quote-currency"/>
+				<xs:element ref="conversion-rate"/>
+				<xs:element ref="inverse-conversion-rate"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Currency Symbol, ISO 4217 Currency Codes, https://en.wikipedia.org/wiki/Currency_symbol -->
+	<xs:element name="base-currency">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+
+	<!-- Currency Symbol, ISO 4217 Currency Codes, https://en.wikipedia.org/wiki/Currency_symbol -->
+	<xs:element name="quote-currency">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+
+	<!-- BID/ASK spread, https://en.wikipedia.org/wiki/Bid%E2%80%93ask_spread -->
+	<xs:element name="conversion-rate">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal"/>
+		</xs:simpleType>
+	</xs:element>
+
+	<!-- BID/ASK spread, https://en.wikipedia.org/wiki/Bid%E2%80%93ask_spread -->
+	<xs:element name="inverse-conversion-rate">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal"/>
+		</xs:simpleType>
+	</xs:element>
+
+</xs:schema>

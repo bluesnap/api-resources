@@ -7,7 +7,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="url" />
-				<xs:element ref="pp-error-code" />
+			 <xs:element ref="pp-error-code" />
 				<xs:element ref="pp-short-comment" />
 				<xs:element ref="pp-long-comment" />
 			</xs:sequence>
@@ -22,6 +22,7 @@
                 <xs:element ref="pp-no-shipping" minOccurs="0" maxOccurs="1"/>
                 <xs:element ref="pp-in-context" minOccurs="0" maxOccurs="1"/>
                 <xs:element ref="pp-authorize-only" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="pp-authorize-max-amount" minOccurs="0" maxOccurs="1"/>
             </xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -91,7 +92,16 @@
     </xs:element>
     <xs:element name="pp-authorize-only">
         <xs:simpleType>
-            <xs:restriction base="xs:boolean" />
+            <xs:restriction base="xs:int">
+            	   <xs:enumeration value="0" />
+                   <xs:enumeration value="1" />
+                   <xs:enumeration value="2" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="pp-authorize-max-amount">
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal" />
         </xs:simpleType>
     </xs:element>
     <xs:element name="pp-req-confirm-shipping">

@@ -7,6 +7,8 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="fraud-session-id" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="enterprise-site-id" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="enterprise-udfs" minOccurs="0" maxOccurs="1" />
             </xs:sequence>
         </xs:complexType>
     </xs:element>

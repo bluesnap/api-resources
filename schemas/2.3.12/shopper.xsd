@@ -85,8 +85,8 @@
 				<xs:element ref="shopper-info" />
 				<xs:element ref="web-info" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="fraud-info" minOccurs="0" maxOccurs="1"/>				
-				<xs:element ref="three-d-authenticated-info" minOccurs="0"
-					maxOccurs="1" />
+				<xs:element ref="three-d-authenticated-info" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="wallet-id" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -156,11 +156,6 @@
 		</xs:simpleType>
 	</xs:element>
 	<xs:element name="fax">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="company-name">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
