@@ -27,4 +27,9 @@
             <xs:restriction base="xs:long" />
         </xs:simpleType>
     </xs:element>
+    	<xs:element name="merchant-shopper-id">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
 </xs:schema>

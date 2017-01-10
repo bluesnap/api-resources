@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+	targetNamespace="http://ws.plimus.com">
+	<xs:include schemaLocation="price.xsd" />
+	<xs:include schemaLocation="subscription.xsd" />
+	<xs:include schemaLocation="sku.xsd" />
+	<xs:include schemaLocation="messages.xsd" />
+	<xs:include schemaLocation="transaction-common.xsd" />
+	<xs:element name="plan">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="plan-id" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="name" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="recurring-charge-amount" minOccurs="1"
+					maxOccurs="1" />
+				<xs:element ref="currency" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="charge-frequency" minOccurs="1"
+					maxOccurs="1" />
+				<xs:element ref="trial-period-days" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="initial-charge-amount" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="charge-on-plan-switch" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="max-number-of-charges" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="grace-period-days" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="status" minOccurs="0" maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="plan-id">
+		<xs:simpleType>
+			<xs:restriction base="xs:long" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="recurring-charge-amount">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="trial-period-days">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="initial-charge-amount">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="charge-on-plan-switch">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="max-number-of-charges">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="grace-period-days">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+
+</xs:schema>

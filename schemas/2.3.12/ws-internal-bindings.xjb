@@ -1,0 +1,260 @@
+<jaxb:bindings 
+	version="2.1"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:annox="http://annox.dev.java.net"
+    jaxb:extensionBindingPrefixes="annox"
+    xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"	   
+	  schemaLocation="shopper.xsd" node="/xs:schema">
+	
+	<!--============================================================================================================-->
+	<!--=========================================== RESOURCE SUFFIX ================================================-->
+	<!--============================================================================================================-->
+	
+	<jaxb:schemaBindings>
+		<jaxb:nameXmlTransform>
+			<jaxb:elementName suffix="Resource" />
+		</jaxb:nameXmlTransform>
+	</jaxb:schemaBindings>
+	
+	<!--============================================================================================================-->
+	<!--========================================== ENCODING EXCLUSIONS =============================================-->
+	<!--============================================================================================================-->
+	
+	<jaxb:bindings schemaLocation="order.xsd" node="/xs:schema">
+	    <jaxb:bindings node="xs:element[@name='cart-item']/xs:complexType/xs:sequence/xs:element[@ref='url']">    
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings> 	
+  	
+  	<jaxb:bindings schemaLocation="fulfillment.xsd" node="/xs:schema">
+	    <jaxb:bindings node="xs:element[@name='sku-license']/xs:complexType/xs:sequence/xs:element[@ref='license-key']">    
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+	    
+	    <jaxb:bindings node="xs:element[@name='sku-download-link']/xs:complexType/xs:sequence/xs:element[@ref='download-link']">    
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings>
+  	
+	<jaxb:bindings schemaLocation="shopper-subscriptions.xsd" node="/xs:schema">
+	    <jaxb:bindings node="xs:element[@name='subscriptions']/xs:complexType/xs:sequence/xs:element[@ref='url']">    
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings> 	
+  
+  	<jaxb:bindings schemaLocation="order-history.xsd" node="/xs:schema">
+	    <jaxb:bindings node="xs:element[@name='past-orders']/xs:complexType/xs:sequence/xs:element[@ref='url']">    
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings>
+  	
+  	<jaxb:bindings schemaLocation="subscription.xsd" node="/xs:schema">
+	    <jaxb:bindings node="xs:element[@name='subscription-charges']/xs:complexType/xs:sequence/xs:element[@ref='url']">    
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings>
+  		  
+  	<jaxb:bindings schemaLocation="subscription.xsd" node="/xs:schema">
+	    <jaxb:bindings node="xs:element[@name='manual-recurring-info']/xs:complexType/xs:sequence/xs:element[@ref='next-payment-url']">    
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings>
+  	
+  	<jaxb:bindings schemaLocation="web-info.xsd" node="/xs:schema">
+	    <jaxb:bindings node="xs:element[@name='web-info']/xs:complexType/xs:sequence/xs:element[@ref='user-agent']">
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+	    <jaxb:bindings node="xs:element[@name='web-info']/xs:complexType/xs:sequence/xs:element[@ref='remote-host']">
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+		<jaxb:bindings node="xs:element[@name='web-info']/xs:complexType/xs:sequence/xs:element[@ref='accept-language']">
+			<annox:annotate target="field">
+				<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+				</annox:annotate>
+			</annox:annotate>
+		</jaxb:bindings>
+	</jaxb:bindings>
+  
+  	<jaxb:bindings schemaLocation="price.xsd" node="/xs:schema">
+	    <jaxb:bindings node="xs:element[@name='formatted-price']/xs:complexType/xs:sequence/xs:element[@ref='symbol']">    
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings>
+
+  	<jaxb:bindings schemaLocation="shopper.xsd" node="/xs:schema">
+	    <jaxb:bindings node="xs:element[@name='invoice-contact-info']/xs:complexType/xs:sequence/xs:element[@ref='phone']">
+	    	<annox:annotate target="field">    
+				<annox:annotate annox:class="com.plimus.platform.security.xss.SanitizeCustomization">  
+		        </annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings> 	 	
+ 
+
+  	<jaxb:bindings schemaLocation="shopper.xsd" node="/xs:schema">
+	    <jaxb:bindings node="xs:element[@name='invoice-contact-info']/xs:complexType/xs:sequence/xs:element[@ref='fax']">
+	    	<annox:annotate target="field">    
+				<annox:annotate annox:class="com.plimus.platform.security.xss.SanitizeCustomization">  
+		        </annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings> 
+  	
+  	
+  	<jaxb:bindings schemaLocation="shopper.xsd" node="/xs:schema">
+	    <jaxb:bindings node="xs:element[@name='shopper-contact-info']/xs:complexType/xs:sequence/xs:element[@ref='phone']">    
+	    	<annox:annotate target="field">    
+				<annox:annotate annox:class="com.plimus.platform.security.xss.SanitizeCustomization">  
+		        </annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings> 	
+  	
+  	<jaxb:bindings schemaLocation="shopper.xsd" node="/xs:schema">
+	    <jaxb:bindings node="xs:element[@name='shopper-contact-info']/xs:complexType/xs:sequence/xs:element[@ref='fax']">
+	    	<annox:annotate target="field">    
+				<annox:annotate annox:class="com.plimus.platform.security.xss.SanitizeCustomization">  
+		        </annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings> 	
+  	
+  	<jaxb:bindings schemaLocation="order.xsd" node="/xs:schema">
+	    <jaxb:bindings node="xs:element[@name='invoice']/xs:complexType/xs:sequence/xs:element[@ref='url']">    
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings> 	
+  	
+  <jaxb:bindings schemaLocation="shopping-context.xsd" node="/xs:schema">
+	    <jaxb:bindings node="//xs:element[@name='shopping-context']/xs:complexType/xs:sequence/xs:element[@ref='buynow-sso-token']"> 
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings>
+  	 	
+  <jaxb:bindings schemaLocation="product.xsd" node="/xs:schema">
+	    <jaxb:bindings node="//xs:element[@name='product-skus']/xs:complexType/xs:sequence/xs:element[@ref='url']"> 
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings>
+  	
+  <jaxb:bindings schemaLocation="product.xsd" node="/xs:schema">
+	    <jaxb:bindings node="//xs:element[@name='product']/xs:complexType/xs:sequence/xs:element[@ref='product-info-url']"> 
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings>
+  	
+  <jaxb:bindings schemaLocation="product.xsd" node="/xs:schema">
+	    <jaxb:bindings node="//xs:element[@name='product']/xs:complexType/xs:sequence/xs:element[@ref='product-image']"> 
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings>
+  	 	
+  <jaxb:bindings schemaLocation="catalog-sku.xsd" node="/xs:schema">
+	    <jaxb:bindings node="//xs:element[@name='buynow-url']/xs:complexType/xs:sequence/xs:element[@ref='url']"> 
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings>
+  	
+  <jaxb:bindings schemaLocation="catalog-sku.xsd" node="/xs:schema">
+	    <jaxb:bindings node="//xs:element[@name='catalog-sku']/xs:complexType/xs:sequence/xs:element[@ref='sku-image']"> 
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings>
+  	
+  <jaxb:bindings schemaLocation="catalog-sku.xsd" node="/xs:schema">
+	    <jaxb:bindings node="//xs:element[@name='sku-custom-parameter']/xs:complexType/xs:sequence/xs:element[@ref='url']"> 
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings>
+
+  <jaxb:bindings schemaLocation="catalog-sku.xsd" node="/xs:schema">
+		<jaxb:bindings node="//xs:element[@name='sku-ipn-destination']/xs:complexType/xs:sequence/xs:element[@ref='url']">
+			<annox:annotate target="field">
+				<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+				</annox:annotate>
+			</annox:annotate>
+		</jaxb:bindings>
+	</jaxb:bindings>
+  	 	
+  <jaxb:bindings schemaLocation="param-encryption.xsd" node="/xs:schema">
+	    <jaxb:bindings node="//xs:element[@name='param-encryption']/xs:complexType/xs:sequence/xs:element[@ref='encrypted-token']"> 
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings>
+  	 	  
+ <!--  <jaxb:bindings schemaLocation="paypal-info.xsd" node="/xs:schema">
+        <jaxb:bindings node="//xs:element[@name='paypal-info']/xs:complexType/xs:sequence/xs:element[@ref='url']">
+            <annox:annotate target="field">
+                <annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+                </annox:annotate>
+            </annox:annotate>
+        </jaxb:bindings>
+    </jaxb:bindings> -->
+
+  	<!--============================================================================================================-->
+	<!--============================================ GLOBAL BINDINGS ===============================================-->
+	<!--============================================================================================================-->
+	
+	<jaxb:globalBindings>
+		<xjc:javaType name="java.util.Date" xmlType="xs:date" adapter="com.plimus.ws.representations.DateAdapter"/>
+	</jaxb:globalBindings>	
+		  
+</jaxb:bindings>

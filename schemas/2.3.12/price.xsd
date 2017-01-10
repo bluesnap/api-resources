@@ -39,6 +39,11 @@
 			<xs:restriction base="xs:decimal"/>
 		</xs:simpleType>
 	</xs:element>
+	<xs:element name="vendor-amount">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal"/>
+		</xs:simpleType>
+	</xs:element>
 	<xs:element name="currency">
 		<xs:simpleType>
 			<xs:restriction base="xs:string"/>

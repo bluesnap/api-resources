@@ -25,6 +25,7 @@
 				<xs:element ref="state" minOccurs="0" />
 				<xs:element ref="zip" minOccurs="0" />
 				<xs:element ref="country" minOccurs="0" />
+				<xs:element ref="personal-identification-number" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>	
