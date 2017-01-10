@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+	targetNamespace="http://ws.plimus.com">
+	<xs:include schemaLocation="transaction-common.xsd" />
+	<xs:include schemaLocation="processing-info.xsd" />
+	<xs:include schemaLocation="item-price.xsd" />
+	<xs:include schemaLocation="price.xsd" />
+	<xs:include schemaLocation="transaction-fraud-info.xsd" />
+	<xs:include schemaLocation="alternative-transaction.xsd" />
+	<xs:include schemaLocation="order.xsd" />
+	<xs:include schemaLocation="subscription-charge.xsd" />
+	<xs:include schemaLocation="subscription.xsd" />
+	<xs:include schemaLocation="plan.xsd" />
+	<xs:include schemaLocation="plans.xsd" />
+	<xs:include schemaLocation="vendor-info.xsd" />
+	<xs:element name="recurring-subscription">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="subscription-id" minOccurs="0" />
+				<xs:element ref="plan-id" minOccurs="0" />
+				<xs:element ref="vaulted-shopper-id" minOccurs="0" />
+				<xs:element ref="status" minOccurs="0" />
+				<xs:element ref="quantity" minOccurs="0" />
+				<xs:element ref="soft-descriptor" minOccurs="0" />
+				<xs:element ref="vendor-info" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="charge-frequency" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="trial-period-days" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="recurring-charge-amount" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="override-recurring-charge-amount"
+					minOccurs="0" maxOccurs="1" />
+				<xs:element ref="currency" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="initial-charge-amount" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="auto-renew" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="next-charge-date" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="override-initial-charge-amount"
+					minOccurs="0" maxOccurs="1" />
+				<xs:element ref="override-trial-period-days" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="payer-info" minOccurs="0" />
+				<xs:element ref="payment-source" minOccurs="0" />
+				<xs:element ref="charge" minOccurs="0" />
+				<xs:element ref="fraud-result-info" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="transaction-fraud-info" minOccurs="0"
+					maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="payment-source">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="credit-card-info" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="ecp-info" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="paypal-transaction" minOccurs="0"
+					maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="charges">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="total-results" minOccurs="0" />
+				<xs:element ref="last-page" />
+				<xs:element ref="charge" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:appinfo>
+							<jaxb:property name="charges" />
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="charge">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="charge-id" minOccurs="0" />
+				<xs:element ref="subscription-id" minOccurs="0" />
+				<xs:element ref="plan-id" minOccurs="0" />
+				<xs:element ref="vaulted-shopper-id" minOccurs="0" />
+				<xs:element ref="transaction-id" minOccurs="0" />
+				<xs:element ref="transaction-date" minOccurs="0" />
+				<xs:element ref="amount" minOccurs="0" />
+				<xs:element ref="currency" minOccurs="0" />
+				<xs:element ref="soft-descriptor" minOccurs="0" />
+				<xs:element ref="payer-info" minOccurs="0" />
+				<xs:element ref="payment-source" minOccurs="0" />
+				<xs:element ref="charge-info" minOccurs="0" />
+				<xs:element ref="refunds" minOccurs="0" />
+				<xs:element ref="processing-info" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="charge-id">
+		<xs:simpleType>
+			<xs:restriction base="xs:long" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="transaction-date">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="override-recurring-charge-amount">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="override-initial-charge-amount">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="override-trial-period-days">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>

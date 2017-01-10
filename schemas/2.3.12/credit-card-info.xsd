@@ -3,12 +3,14 @@
 <xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
 	targetNamespace="http://ws.plimus.com">
 	<xs:include schemaLocation="contact-info.xsd"/>
+	<xs:include schemaLocation="processing-info.xsd"/>
 	<xs:element name="credit-card-info">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="billing-contact-info" minOccurs="0" />
+                <xs:element ref="pf-token" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="credit-card" />
-				<xs:element ref="pf-token" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="processing-info"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -23,6 +25,7 @@
 				<xs:element ref="state" minOccurs="0" />
 				<xs:element ref="zip" minOccurs="0" />
 				<xs:element ref="country" minOccurs="0" />
+				<xs:element ref="personal-identification-number" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>	
@@ -32,7 +35,8 @@
 				<xs:element ref="card-number" minOccurs="0" />
 				<xs:element ref="encrypted-card-number" minOccurs="0" />
 				<xs:element ref="card-last-four-digits" minOccurs="0"/>
-				<xs:element ref="card-type" />
+				<xs:element ref="card-type" minOccurs="0" />
+				<xs:element ref="card-sub-type" minOccurs="0" />
 				<xs:element ref="expiration-month" minOccurs="0" />
 				<xs:element ref="expiration-year" minOccurs="0" />
 				<xs:element ref="security-code" minOccurs="0" />
@@ -41,10 +45,17 @@
 				<xs:element ref="start-year" minOccurs="0" />
 				<xs:element ref="issue-number" minOccurs="0" />
 				<xs:element ref="card-fingerprint" minOccurs="0"/>
+				<xs:element ref="card-category" minOccurs="0"/>
+				<xs:element ref="issuing-country-code" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="card-type">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="card-sub-type">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
@@ -100,6 +111,16 @@
 		</xs:simpleType>
 	</xs:element>
 	<xs:element name="issue-number">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="card-category">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="issuing-country-code">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>

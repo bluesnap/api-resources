@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+		   targetNamespace="http://ws.plimus.com">
+
+	<xs:include schemaLocation="currency-rates.xsd"/>
+
+	<xs:element name="exchange-rates">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="base-currency"/>
+				<xs:element ref="base-currency-name"/>
+				<xs:element ref="exchange-rate" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Exchange rate, https://en.wikipedia.org/wiki/Exchange_rate -->
+	<xs:element name="exchange-rate">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="quote-currency"/>
+				<xs:element ref="quote-currency-name"/>
+				<xs:element ref="fraction-digits"/>
+				<xs:element ref="conversion-rate"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Currency Name, ISO 4217 Currency Names, https://en.wikipedia.org/wiki/ISO_4217 -->
+	<xs:element name="base-currency-name">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+
+	<!-- Currency Name, ISO 4217 Currency Names, https://en.wikipedia.org/wiki/ISO_4217 -->
+	<xs:element name="quote-currency-name">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+
+	<!-- the smallest denomination of the given currency (subunit value),
+	examples:
+		2 for USD (0.01 USD, 1 cent coin), https://en.wikipedia.org/wiki/United_States_dollar
+		0 for YEN (1.00 YEN, 1 yen coin), https://en.wikipedia.org/wiki/1_yen_coin
+	see https://en.wikipedia.org/wiki/Denomination_(currency) -->
+	<xs:element name="fraction-digits">
+		<xs:simpleType>
+			<xs:restriction base="xs:int"/>
+		</xs:simpleType>
+	</xs:element>
+
+</xs:schema>

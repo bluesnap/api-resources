@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+	targetNamespace="http://ws.plimus.com">
+	<xs:include schemaLocation="vendor.xsd"/>
+	<xs:include schemaLocation="store.xsd"/>
+	<xs:element name="enabled">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="locked">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="locked-out">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="old-user-passwords">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="old-user-password" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="old-user-password">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="password" minOccurs="0"/>
+				<xs:element ref="password-change-date" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="expiration-date">
+		<xs:simpleType>
+			<xs:restriction base="xs:date" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="password-expiration-date">
+		<xs:simpleType>
+			<xs:restriction base="xs:date" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="password-change-date">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="allow-offline-operations">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="need-shopper-approval-for-future-charges">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="enable-allowed-ip-check">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean" />
+		</xs:simpleType>
+	</xs:element>
+	 <xs:element name="old-gateway-keys">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="old-gateway-key" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="old-gateway-key">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="public-key" minOccurs="0"/>
+        <xs:element ref="private-key" minOccurs="0" />
+        <xs:element ref="key-change-date" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="public-key">
+    <xs:simpleType>
+      <xs:restriction base="xs:string" />
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="private-key">
+    <xs:simpleType>
+      <xs:restriction base="xs:string" />
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="key-change-date">
+    <xs:simpleType>
+      <xs:restriction base="xs:string" />
+    </xs:simpleType>
+  </xs:element>
+	<xs:element name="user-info">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="username" />
+				<xs:element ref="password" />
+				<xs:element ref="old-user-passwords" />
+				<xs:element ref="enabled" />
+				<xs:element ref="locked" />
+				<xs:element ref="locked-out" />
+				<xs:element ref="expiration-date" />
+				<xs:element ref="password-expiration-date" />
+				<xs:element ref="allow-offline-operations" />
+				<xs:element ref="need-shopper-approval-for-future-charges" />
+				<xs:element ref="enable-allowed-ip-check" />
+				<xs:element ref="public-key" />
+				<xs:element ref="old-gateway-keys" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="role">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="roles">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="role" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="allowed-ip">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="allowed-ips">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="allowed-ip" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="stores">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="store" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="user">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="user-info" />
+				<xs:element ref="seller" />
+				<xs:element ref="roles" />
+				<xs:element ref="allowed-ips" />
+				<xs:element ref="stores" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

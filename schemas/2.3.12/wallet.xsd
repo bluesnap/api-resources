@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+	targetNamespace="http://ws.plimus.com">
+	
+	<xs:include schemaLocation="url-common.xsd"/>
+	<xs:include schemaLocation="contact-info.xsd"/>
+	<xs:include schemaLocation="credit-card-info.xsd"/>
+	<xs:include schemaLocation="shipping-contact-info.xsd"/>
+	<xs:include schemaLocation="item-price.xsd"/>
+	<xs:include schemaLocation="transaction-common.xsd"/>
+	
+
+	<xs:element name="wallet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="wallet-type" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="store-id" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="origin-url" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="return-url" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="call-id" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="wallet-id" minOccurs="0" maxOccurs="1" />
+				
+
+				<!-- for the POST response -->
+				<xs:element ref="wallet-token" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="merchant-checkout-id" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="allowed-card-types" minOccurs="0" maxOccurs="1" />
+				
+				<!-- for the GET response -->
+				<xs:element ref="first-name" minOccurs="0" />
+				<xs:element ref="last-name" minOccurs="0" />
+				<xs:element ref="email" minOccurs="0" />
+				<xs:element ref="country" minOccurs="0" />				
+				<xs:element ref="phone" minOccurs="0" />
+				<xs:element ref="credit-card" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="billing-contact-info" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="shipping-contact-info" minOccurs="0" maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+			
+	<xs:element name="call-id">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="wallet-type">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="wallet-token">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="merchant-checkout-id">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="allowed-card-types">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+
+</xs:schema>

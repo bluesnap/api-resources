@@ -12,6 +12,7 @@
 	<xs:include schemaLocation="paypal-info.xsd"/>
 	<xs:include schemaLocation="fraud-info.xsd"/>	
 	<xs:include schemaLocation="local-bank-transfer-info.xsd"/>
+	<xs:include schemaLocation="order-common.xsd"/>
 	<xs:element name="param-value">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
@@ -64,6 +65,7 @@
 				<xs:element ref="web-info" />
 				<xs:element ref="fraud-info" minOccurs="0"/>
 				<xs:element ref="three-d-authenticated-info" minOccurs="0" />
+				<xs:element ref="authorized-by-shopper" minOccurs="0" maxOccurs="1" />				
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -95,6 +97,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="invoice-id"/>
+				<xs:element ref="original-invoice-id" minOccurs="0"/>
 				<xs:element ref="url"/>
 				<xs:element ref="financial-transactions"/>
 			</xs:sequence>
@@ -150,11 +153,6 @@
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
-	<xs:element name="payment-method">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>
-	</xs:element>
 	<xs:element name="invoice-status">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
@@ -172,7 +170,8 @@
 				<xs:element ref="expected-total-price" minOccurs="0" />
 				<xs:element ref="affiliate-id" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="post-sale-info" minOccurs="0" />
-				<xs:element ref="fulfillment" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="fulfillment" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="fraud-result-info" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -201,11 +200,16 @@
 			<xs:restriction base="xs:long" />
 		</xs:simpleType>
 	</xs:element>
-	<xs:element name="order-id">
+	<xs:element name="original-invoice-id">
 		<xs:simpleType>
 			<xs:restriction base="xs:long" />
 		</xs:simpleType>
 	</xs:element>
+	<xs:element name="seller-order-id">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>	
 	<xs:element name="affiliate-id">
 		<xs:simpleType>
 			<xs:restriction base="xs:long" />
@@ -241,6 +245,7 @@
 		</xs:simpleType>
 	</xs:element>
 	<xs:element name="cdod" type="xs:boolean" />
+	<xs:element name="skip-promotions" type="xs:boolean" />
 	<xs:element name="edw-duration">
 		<xs:simpleType>
 			<xs:restriction base="xs:int">
@@ -278,6 +283,7 @@
 				<xs:element ref="tax" minOccurs="0" />
 				<xs:element ref="tax-rate" minOccurs="0" />
 				<xs:element ref="total-cart-cost" minOccurs="0" />
+				<xs:element ref="skip-promotions" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

@@ -7,6 +7,9 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="url" />
+			 <xs:element ref="pp-error-code" />
+				<xs:element ref="pp-short-comment" />
+				<xs:element ref="pp-long-comment" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -17,6 +20,9 @@
                 <xs:element ref="pp-return-url" maxOccurs="1"/>
                 <xs:element ref="pp-req-confirm-shipping" minOccurs="0" maxOccurs="1"/>
                 <xs:element ref="pp-no-shipping" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="pp-in-context" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="pp-authorize-only" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="pp-authorize-max-amount" minOccurs="0" maxOccurs="1"/>
             </xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -69,6 +75,35 @@
             <xs:restriction base="xs:string" />
         </xs:simpleType>
     </xs:element>
+    <xs:element name="pp-error-code">
+        <xs:simpleType>
+            <xs:restriction base="xs:string" />
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="pp-long-comment">
+        <xs:simpleType>
+            <xs:restriction base="xs:string" />
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="pp-short-comment">
+        <xs:simpleType>
+            <xs:restriction base="xs:string" />
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="pp-authorize-only">
+        <xs:simpleType>
+            <xs:restriction base="xs:int">
+            	   <xs:enumeration value="0" />
+                   <xs:enumeration value="1" />
+                   <xs:enumeration value="2" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="pp-authorize-max-amount">
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal" />
+        </xs:simpleType>
+    </xs:element>
     <xs:element name="pp-req-confirm-shipping">
         <xs:simpleType>
             <xs:restriction base="xs:int">
@@ -84,6 +119,11 @@
                     <xs:enumeration value="1" />
                     <xs:enumeration value="2" />
             </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="pp-in-context">
+        <xs:simpleType>
+            <xs:restriction base="xs:boolean"/>
         </xs:simpleType>
     </xs:element>
     

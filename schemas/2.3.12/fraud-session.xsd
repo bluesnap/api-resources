@@ -7,4 +7,51 @@
             <xs:restriction base="xs:string" />
         </xs:simpleType>
     </xs:element>
+    <xs:element name="enterprise-site-id">
+        <xs:simpleType>
+            <xs:restriction base="xs:string" />
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="udf-name">
+        <xs:simpleType>
+            <xs:restriction base="xs:string" />
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="udf-value">
+        <xs:simpleType>
+            <xs:restriction base="xs:string" />
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="enterprise-udfs">
+        <xs:complexType> 
+            <xs:sequence>
+                <xs:element ref="udf" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>    
+    <xs:element name="udf">
+        <xs:complexType> 
+            <xs:sequence>
+                <xs:element ref="udf-name" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="udf-value" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    
+    <xs:element name="fraud-result-info">
+       <xs:complexType> 
+            <xs:sequence>
+                <xs:element ref="device-data-collector" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>   
+    <xs:element name="device-data-collector">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                    <xs:enumeration value="Y" />
+                    <xs:enumeration value="N" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
 </xs:schema>

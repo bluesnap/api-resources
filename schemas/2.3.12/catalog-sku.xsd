@@ -26,6 +26,7 @@
 				<xs:element ref="sku-effective-dates" />
 				<xs:element ref="sku-coupon-settings" />
 				<xs:element ref="sku-custom-parameters" />
+				<xs:element ref="sku-ipn-settings" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -187,7 +188,7 @@
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
-	</xs:element>	
+	</xs:element>
 	<xs:element name="sku-image">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
@@ -325,6 +326,39 @@
 	<xs:element name="number-of-charges">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="sku-ipn-settings">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="use-seller-level-settings"/>
+				<xs:element ref="sku-ipn-destinations" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="use-seller-level-settings">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="sku-ipn-destinations">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="sku-ipn-destination" minOccurs="0"  maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="sku-ipn-destination">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="is-default"/>
+				<xs:element ref="url"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="is-default">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean" />
 		</xs:simpleType>
 	</xs:element>
 </xs:schema>

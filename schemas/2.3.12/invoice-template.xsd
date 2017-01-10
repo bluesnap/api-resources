@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+	targetNamespace="http://ws.plimus.com" elementFormDefault="qualified">
+	<xs:element name="invoice-template">
+    <xs:complexType>
+      <xs:sequence>
+		  <xs:element name="seller-id" type="xs:long" minOccurs="0" />
+		  <xs:element name="active" type="xs:boolean" default="false"/>
+		  <xs:element name="company-logo" type="xs:string" minOccurs="0" />
+          <xs:element name="shipping-section-visible" type="xs:boolean" default="true"/>
+          <xs:element name="support-email-visible" type="xs:boolean" default="true"/>
+          <xs:element name="website-url-visible" type="xs:boolean" default="true"/>
+          <xs:element name="phone-visible" type="xs:boolean" default="true"/>
+          <xs:element name="address-visible" type="xs:boolean" default="true"/>
+          <xs:element name="extra-html" type="xs:string" minOccurs="0" default=""/>
+        </xs:sequence>
+      </xs:complexType>
+	</xs:element>
+</xs:schema>

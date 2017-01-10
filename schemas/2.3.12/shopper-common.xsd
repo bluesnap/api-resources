@@ -8,5 +8,9 @@
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
-		
+	<xs:element name="company-name">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
 </xs:schema>

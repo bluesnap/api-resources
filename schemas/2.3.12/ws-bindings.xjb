@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jxb:bindings 
+      xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	  xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	  jxb:version="2.0"
+	  schemaLocation="shopper.xsd" node="/xs:schema">
+	  
+	<jxb:schemaBindings>
+		<jxb:nameXmlTransform>
+			<jxb:elementName suffix="Resource" />
+		</jxb:nameXmlTransform>
+	</jxb:schemaBindings>
+	
+	<jxb:globalBindings>
+		<xjc:javaType name="java.util.Date" xmlType="xs:date" adapter="com.plimus.wsintegration.representations.DateAdapter"/>
+	</jxb:globalBindings>
+</jxb:bindings>
