@@ -239,6 +239,14 @@
 	        </annox:annotate>
 	    </jaxb:bindings>
   	</jaxb:bindings>
+  	  <jaxb:bindings schemaLocation="wallet.xsd" node="/xs:schema">
+	    <jaxb:bindings node="//xs:element[@name='wallet']/xs:complexType/xs:sequence/xs:element[@ref='wallet-token']"> 
+	        <annox:annotate target="field">
+	        	<annox:annotate annox:class="com.plimus.platform.security.xss.EncodingExcluded">
+	        	</annox:annotate>
+	        </annox:annotate>
+	    </jaxb:bindings>
+  	</jaxb:bindings>
   	 	  
  <!--  <jaxb:bindings schemaLocation="paypal-info.xsd" node="/xs:schema">
         <jaxb:bindings node="//xs:element[@name='paypal-info']/xs:complexType/xs:sequence/xs:element[@ref='url']">

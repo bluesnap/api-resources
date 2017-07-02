@@ -11,6 +11,7 @@
     <xs:include schemaLocation="transaction-fraud-info.xsd"/>
 	<xs:include schemaLocation="transaction-meta-data.xsd"/>
     <xs:include schemaLocation="refunds.xsd"/>
+    <xs:include schemaLocation="wallet.xsd"/>
 	
     <xs:element name="card-transaction">
         <xs:complexType>
@@ -47,6 +48,7 @@
                 <xs:element ref="pf-token" minOccurs="0" maxOccurs="1" />
                 
                 <xs:element ref="wallet-id" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="wallet" minOccurs="0" maxOccurs="1" />
                 
                 <xs:element ref="transaction-meta-data" minOccurs="0" maxOccurs="1"/>
                 

@@ -14,6 +14,7 @@
 	<xs:include schemaLocation="plan.xsd" />
 	<xs:include schemaLocation="plans.xsd" />
 	<xs:include schemaLocation="vendor-info.xsd" />
+	<xs:include schemaLocation="wallet.xsd" />
 	<xs:element name="recurring-subscription">
 		<xs:complexType>
 			<xs:sequence>
@@ -27,6 +28,8 @@
 				<xs:element ref="charge-frequency" minOccurs="0"
 					maxOccurs="1" />
 				<xs:element ref="trial-period-days" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="subscription-currency" minOccurs="0"
 					maxOccurs="1" />
 				<xs:element ref="recurring-charge-amount" minOccurs="0"
 					maxOccurs="1" />
@@ -55,11 +58,13 @@
 	<xs:element name="payment-source">
 		<xs:complexType>
 			<xs:sequence>
+				<xs:element ref="wallet" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="credit-card-info" minOccurs="0"
 					maxOccurs="1" />
 				<xs:element ref="ecp-info" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="paypal-transaction" minOccurs="0"
 					maxOccurs="1" />
+				<xs:element ref="pf-token" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -119,6 +124,11 @@
 		</xs:simpleType>
 	</xs:element>
 	<xs:element name="override-trial-period-days">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="subscription-currency">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>

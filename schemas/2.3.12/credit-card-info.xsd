@@ -37,6 +37,7 @@
 				<xs:element ref="card-last-four-digits" minOccurs="0"/>
 				<xs:element ref="card-type" minOccurs="0" />
 				<xs:element ref="card-sub-type" minOccurs="0" />
+				<xs:element ref="card-category" minOccurs="0"/>
 				<xs:element ref="expiration-month" minOccurs="0" />
 				<xs:element ref="expiration-year" minOccurs="0" />
 				<xs:element ref="security-code" minOccurs="0" />
@@ -45,7 +46,6 @@
 				<xs:element ref="start-year" minOccurs="0" />
 				<xs:element ref="issue-number" minOccurs="0" />
 				<xs:element ref="card-fingerprint" minOccurs="0"/>
-				<xs:element ref="card-category" minOccurs="0"/>
 				<xs:element ref="issuing-country-code" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>

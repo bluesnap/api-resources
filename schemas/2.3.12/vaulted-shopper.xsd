@@ -25,6 +25,7 @@
 				<xs:element ref="zip" minOccurs="0" />
 				<xs:element ref="phone" minOccurs="0" />
 				<xs:element ref="personal-identification-number" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="company-name" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="soft-descriptor" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="shopper-currency" minOccurs="0" />	
 				<xs:element ref="wallet-id" minOccurs="0" />			
@@ -52,6 +53,7 @@
 				<xs:element ref="payment-method" minOccurs="1" maxOccurs="1" />
 				<xs:element ref="credit-card" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="ecp" minOccurs="0" maxOccurs="1" />			
+				<xs:element ref="wallet" minOccurs="0" maxOccurs="1" />			
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
