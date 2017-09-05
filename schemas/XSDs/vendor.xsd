@@ -148,7 +148,27 @@
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
+	<xs:element name="missing-items">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="decline-reason">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="payout-status">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
 	<xs:element name="dob">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="default-payout-currency">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
@@ -176,6 +196,17 @@
 				<xs:element ref="passport-number" minOccurs="0" />
 				<xs:element ref="driver-license-number" minOccurs="0" />
 				<xs:element ref="email" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="verification">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="payout-status" minOccurs="0" />
+				<xs:element ref="processing-status" minOccurs="0" />
+				<xs:element ref="decline-reason" minOccurs="0" />
+				<xs:element ref="missing-items" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -213,6 +244,7 @@
 				<xs:element ref="iban" minOccurs="0" />
 				<xs:element ref="bank-account-id" minOccurs="0" />
 				<xs:element ref="intermediary-bank-info" minOccurs="0" />
+				<xs:element ref="payment-reference" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -269,12 +301,14 @@
 				<xs:element ref="state" minOccurs="0" />
 				<xs:element ref="tax-id" minOccurs="0" />
 				<xs:element ref="vat-id" minOccurs="0" />
+				<xs:element ref="default-payout-currency" minOccurs="0" />
 				<xs:element ref="frequency" minOccurs="0" />
 				<xs:element ref="delay" minOccurs="0" />
 				<xs:element ref="vendor-principal" minOccurs="1"
 					maxOccurs="1" />
 				<xs:element ref="payout-info" minOccurs="1" maxOccurs="unbounded" />
 				<xs:element ref="vendor-agreement" minOccurs="0" />
+				<xs:element ref="verification" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

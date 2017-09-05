@@ -14,6 +14,8 @@
 				<xs:element ref="recurring-charge" minOccurs="0" />
 				<xs:element ref="credit-card" minOccurs="0" />	
 				<xs:element ref="ecp" minOccurs="0" />
+				<xs:element ref="sepa-direct-debit" minOccurs="0" />
+				<xs:element ref="wallet" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="paypal" minOccurs="0" />
 				<xs:element ref="paypal-subscription" minOccurs="0" />
 				<xs:element ref="catalog-recurring-charge" minOccurs="0" />

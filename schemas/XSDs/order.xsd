@@ -10,7 +10,10 @@
 	<xs:include schemaLocation="ecp-info.xsd"/>
 	<xs:include schemaLocation="shopper.xsd"/>
 	<xs:include schemaLocation="paypal-info.xsd"/>
+	<xs:include schemaLocation="fraud-info.xsd"/>	
 	<xs:include schemaLocation="local-bank-transfer-info.xsd"/>
+	<xs:include schemaLocation="order-common.xsd"/>
+	<xs:include schemaLocation="wallet.xsd"/>
 	<xs:element name="param-value">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
@@ -36,11 +39,6 @@
 			<xs:restriction base="xs:decimal" />
 		</xs:simpleType>
 	</xs:element>
-	<xs:element name="soft-descriptor">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>
-	</xs:element>
 	<xs:element name="sku-parameter">
 		<xs:complexType>
 			<xs:sequence>
@@ -60,13 +58,17 @@
 				<xs:element ref="shopper-id" minOccurs="0" />
 				<xs:element ref="seller-shopper-id" minOccurs="0" />
 				<xs:element ref="credit-card" minOccurs="0"/>
-				<xs:element ref="ecp" minOccurs="0" />				
+				<xs:element ref="ecp" minOccurs="0" />		
+				<xs:element ref="sepa-direct-debit" minOccurs="0" />		
+				<xs:element ref="wallet" minOccurs="0" maxOccurs="1" />		
 				<xs:element ref="invoice-contact-info" minOccurs="0" />
 				<xs:element ref="paypal" minOccurs="0" />
 				<xs:element ref="wire" minOccurs="0" />
 				<xs:element ref="local-bank-transfer" minOccurs="0" />
 				<xs:element ref="web-info" />
+				<xs:element ref="fraud-info" minOccurs="0"/>
 				<xs:element ref="three-d-authenticated-info" minOccurs="0" />
+				<xs:element ref="authorized-by-shopper" minOccurs="0" maxOccurs="1" />				
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -98,6 +100,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="invoice-id"/>
+				<xs:element ref="original-invoice-id" minOccurs="0"/>
 				<xs:element ref="url"/>
 				<xs:element ref="financial-transactions"/>
 			</xs:sequence>
@@ -124,8 +127,10 @@
 				<xs:element ref="payment-method"/>
 				<xs:element ref="target-balance"/>
 				<xs:element ref="credit-card"/>
+				<xs:element ref="wallet"/>
 				<xs:element ref="paypal-transaction-data" minOccurs="0" />
 				<xs:element ref="ecp"/>
+				<xs:element ref="sepa-direct-debit"/>
 				<xs:element ref="invoice-contact-info"/>
 				<xs:element ref="skus"/>
 			</xs:sequence>
@@ -153,11 +158,6 @@
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
-	<xs:element name="payment-method">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>
-	</xs:element>
 	<xs:element name="invoice-status">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
@@ -167,6 +167,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="order-id" />
+				<xs:element ref="seller-order-id" minOccurs="0"/>
 				<xs:element ref="soft-descriptor" minOccurs="0" />
 				<xs:element ref="ordering-shopper" />
 				<xs:element ref="transaction-payment-info" minOccurs="0"/>	
@@ -174,7 +175,8 @@
 				<xs:element ref="expected-total-price" minOccurs="0" />
 				<xs:element ref="affiliate-id" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="post-sale-info" minOccurs="0" />
-				<xs:element ref="fulfillment" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="fulfillment" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="fraud-result-info" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -203,11 +205,16 @@
 			<xs:restriction base="xs:long" />
 		</xs:simpleType>
 	</xs:element>
-	<xs:element name="order-id">
+	<xs:element name="original-invoice-id">
 		<xs:simpleType>
 			<xs:restriction base="xs:long" />
 		</xs:simpleType>
 	</xs:element>
+	<xs:element name="seller-order-id">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>	
 	<xs:element name="affiliate-id">
 		<xs:simpleType>
 			<xs:restriction base="xs:long" />
@@ -226,6 +233,7 @@
 			<xs:sequence>
 				<xs:element ref="paypal-info" minOccurs="0"/>
 				<xs:element ref="local-bank-transfer-info" minOccurs="0"/>
+				<xs:element ref="wallet" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -243,6 +251,7 @@
 		</xs:simpleType>
 	</xs:element>
 	<xs:element name="cdod" type="xs:boolean" />
+	<xs:element name="skip-promotions" type="xs:boolean" />
 	<xs:element name="edw-duration">
 		<xs:simpleType>
 			<xs:restriction base="xs:int">
@@ -280,6 +289,7 @@
 				<xs:element ref="tax" minOccurs="0" />
 				<xs:element ref="tax-rate" minOccurs="0" />
 				<xs:element ref="total-cart-cost" minOccurs="0" />
+				<xs:element ref="skip-promotions" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

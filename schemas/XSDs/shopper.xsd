@@ -5,6 +5,7 @@
 	<xs:include schemaLocation="item-price.xsd"/>
 	<xs:include schemaLocation="credit-card-info.xsd"/>
 	<xs:include schemaLocation="ecp-info.xsd"/>
+	<xs:include schemaLocation="sepa-direct-debit-info.xsd"/>
 	<xs:include schemaLocation="ordering-shopper.xsd"/>
 	<xs:include schemaLocation="web-info.xsd"/>
 	<xs:include schemaLocation="three-d-info.xsd"/>
@@ -132,6 +133,7 @@
 				<xs:element ref="credit-card-info" minOccurs="0" />
 				<xs:element ref="credit-cards-info" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="ecps-info" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="sepa-direct-debits-info" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="balance" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>

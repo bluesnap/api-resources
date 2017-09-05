@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+	targetNamespace="http://ws.plimus.com">
+	<!-- For billing-contact-info. -->
+	<xs:include schemaLocation="credit-card-info.xsd" />
+	<xs:include schemaLocation="local-bank-transfer-info.xsd" />
+
+	<xs:element name="sepa-direct-debits-info">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="sepa-direct-debit-info" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="sepa-direct-debit-info">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="billing-contact-info" />
+				<xs:element ref="sepa-direct-debit" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="sepa-direct-debit">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="iban" />
+				<xs:element ref="bic" />
+				<xs:element ref="iban-first-four" />
+				<xs:element ref="iban-last-four" />
+				<xs:element ref="mandate-id" />
+				<xs:element ref="mandate-date" />
+				<xs:element ref="pre-notification-text" />
+				<xs:element ref="pre-notification-translation-ref" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="bic">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="iban-first-four">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="iban-last-four">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="mandate-id">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="mandate-date">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="pre-notification-text">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="pre-notification-translation-ref">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+</xs:schema>
