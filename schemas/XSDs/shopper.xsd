@@ -59,6 +59,7 @@
 				<xs:element ref="locale" minOccurs="0" />
 				<xs:element ref="permitted-future-charges" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="soft-descriptor" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="descriptor-phone-number" minOccurs="0" maxOccurs="1"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

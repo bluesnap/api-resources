@@ -10,6 +10,7 @@
 				<xs:element ref="payment-reference" />
 				<xs:element ref="additional-reference" />
 				<xs:element ref="account-holder" />
+				<xs:element ref="bank-code" />
 				<xs:element ref="bank-name" />
 				<xs:element ref="iban" />
 				<xs:element ref="country-description" />
@@ -40,6 +41,11 @@
 		</xs:simpleType>
 	</xs:element>
 	<xs:element name="account-holder">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="bank-code">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>

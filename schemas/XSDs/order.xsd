@@ -124,6 +124,7 @@
 				<xs:element ref="tax-rate"/>
 				<xs:element ref="currency"/>
 				<xs:element ref="soft-descriptor"/>
+				<xs:element ref="descriptor-phone-number" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="payment-method"/>
 				<xs:element ref="target-balance"/>
 				<xs:element ref="credit-card"/>
@@ -169,6 +170,7 @@
 				<xs:element ref="order-id" />
 				<xs:element ref="seller-order-id" minOccurs="0"/>
 				<xs:element ref="soft-descriptor" minOccurs="0" />
+				<xs:element ref="descriptor-phone-number" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="ordering-shopper" />
 				<xs:element ref="transaction-payment-info" minOccurs="0"/>	
 				<xs:element ref="cart" />

@@ -12,6 +12,11 @@
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>	
+	<xs:element name="descriptor-phone-number">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
 	<xs:element name="merchant-transaction-id">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
