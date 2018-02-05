@@ -122,17 +122,19 @@
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
+
 	<xs:element name="enable-apple-pay">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
-	
+
 	<xs:element name="enable-sepa-direct-debit">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
+
 	<xs:element name="enable-encrypt-callback-url">
 		<xs:simpleType>
 			<xs:restriction base="xs:boolean" />

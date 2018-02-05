@@ -58,7 +58,7 @@
 				<xs:element ref="shopper-id" minOccurs="0" />
 				<xs:element ref="seller-shopper-id" minOccurs="0" />
 				<xs:element ref="credit-card" minOccurs="0"/>
-				<xs:element ref="ecp" minOccurs="0" />		
+				<xs:element ref="ecp" minOccurs="0" />
 				<xs:element ref="sepa-direct-debit" minOccurs="0" />		
 				<xs:element ref="wallet" minOccurs="0" maxOccurs="1" />		
 				<xs:element ref="invoice-contact-info" minOccurs="0" />
@@ -100,6 +100,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="invoice-id"/>
+				<xs:element name="reversal-type" type="xs:string" minOccurs="0" form="qualified"/>
 				<xs:element ref="original-invoice-id" minOccurs="0"/>
 				<xs:element ref="url"/>
 				<xs:element ref="financial-transactions"/>
