@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+	targetNamespace="http://ws.plimus.com">
+	<xs:element name="three-d-secure">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="three-d-secure-token" minOccurs="0" />
+				<xs:element ref="three-d-secure-result-token" minOccurs="0" />
+				<xs:element ref="eci" minOccurs="0" />
+				<xs:element ref="cavv" minOccurs="0" />
+				<xs:element ref="xid" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="three-d-secure-token">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="three-d-secure-result-token">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="eci">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="cavv">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="xid">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+
+</xs:schema>

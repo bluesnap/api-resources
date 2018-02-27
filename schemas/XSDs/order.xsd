@@ -14,6 +14,8 @@
 	<xs:include schemaLocation="local-bank-transfer-info.xsd"/>
 	<xs:include schemaLocation="order-common.xsd"/>
 	<xs:include schemaLocation="wallet.xsd"/>
+	<xs:include schemaLocation="level-3-data.xsd"/>
+	
 	<xs:element name="param-value">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
@@ -180,6 +182,7 @@
 				<xs:element ref="post-sale-info" minOccurs="0" />
                 <xs:element ref="fulfillment" minOccurs="0" maxOccurs="1" />
                 <xs:element ref="fraud-result-info" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="level-3-data" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

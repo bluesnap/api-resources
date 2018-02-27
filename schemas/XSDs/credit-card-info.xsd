@@ -5,6 +5,7 @@
 	<xs:include schemaLocation="contact-info.xsd"/>
 	<xs:include schemaLocation="processing-info.xsd"/>
 	<xs:include schemaLocation="order.xsd"/>
+	<xs:include schemaLocation="three-d-secure.xsd"/>
 	<xs:element name="credit-card-info">
 		<xs:complexType>
 			<xs:sequence>
@@ -13,6 +14,7 @@
 				<xs:element ref="credit-card" />
 				<xs:element ref="processing-info"/>
 				<xs:element ref="status" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="three-d-secure" minOccurs="0" maxOccurs="1"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

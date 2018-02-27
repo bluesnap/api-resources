@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+	targetNamespace="http://ws.plimus.com">
+	<xs:include schemaLocation="messages.xsd" />
+
+	<xs:element name="level-3-data-item">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="line-item-total" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="commodity-code" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="description" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="discount-amount" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="discount-indicator" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="gross-net-indicator" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="product-code" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="item-quantity" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="tax-amount" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="tax-rate" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="tax-type" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="unit-cost" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="unit-of-measure" minOccurs="0"
+					maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="line-item-total">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="commodity-code">
+		<xs:simpleType>
+			<xs:restriction base="xs:long" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="discount-amount">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="discount-indicator">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="gross-net-indicator">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="product-code">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="tax-type">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="unit-cost">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="unit-of-measure">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+		<xs:element name="item-quantity">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal" />
+		</xs:simpleType>
+	</xs:element>
+
+</xs:schema>

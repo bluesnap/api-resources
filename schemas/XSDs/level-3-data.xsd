@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+	targetNamespace="http://ws.plimus.com">
+	<xs:include schemaLocation="level-3-data-item.xsd" />
+	<xs:include schemaLocation="vendor.xsd" />
+	<xs:include schemaLocation="order.xsd" />
+	<xs:element name="level-3-data">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="customer-reference-number" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="sales-tax-amount" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="freight-amount" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="duty-amount" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="destination-zip-code" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="destination-country-code" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="ship-from-zip-code" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="discount-amount" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="tax-amount" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="tax-rate" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="tax-id" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="transaction-processed-with-l3d-supported-acquirer"
+					minOccurs="0" maxOccurs="1" />
+				<xs:element ref="level-3-data-item" maxOccurs="98">
+					<xs:annotation>
+						<xs:appinfo>
+							<jaxb:property name="level-3-data-items" />
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="customer-reference-number">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="tax-amount">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="sales-tax-amount">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="freight-amount">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="duty-amount">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="destination-zip-code">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="destination-country-code">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="vat-tax-id">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="ship-from-zip-code">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="transaction-processed-with-l3d-supported-acquirer"
+		type="xs:boolean" />
+	<xs:element name="discount-amount-applied-to-order">
+		<xs:simpleType>
+			<xs:restriction base="xs:long" />
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>
