@@ -14,7 +14,6 @@
 				<xs:element ref="credit-card" />
 				<xs:element ref="processing-info"/>
 				<xs:element ref="status" minOccurs="0" maxOccurs="1" />
-				<xs:element ref="three-d-secure" minOccurs="0" maxOccurs="1"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -30,6 +29,7 @@
 				<xs:element ref="zip" minOccurs="0" />
 				<xs:element ref="country" minOccurs="0" />
 				<xs:element ref="personal-identification-number" minOccurs="0" />
+				<xs:element ref="company-name" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>	
@@ -42,6 +42,9 @@
 				<xs:element ref="card-type" minOccurs="0" />
 				<xs:element ref="card-sub-type" minOccurs="0" />
 				<xs:element ref="card-category" minOccurs="0"/>
+				<xs:element ref="bin-category" minOccurs="0"/>
+				<xs:element ref="card-regulated" minOccurs="0"/>
+				<xs:element ref="issuing-bank" minOccurs="0"/>
 				<xs:element ref="expiration-month" minOccurs="0" />
 				<xs:element ref="expiration-year" minOccurs="0" />
 				<xs:element ref="security-code" minOccurs="0" />
@@ -126,6 +129,21 @@
 		</xs:simpleType>
 	</xs:element>
 	<xs:element name="card-category">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="bin-category">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="card-regulated">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="issuing-bank">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>

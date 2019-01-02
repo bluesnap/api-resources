@@ -183,9 +183,24 @@
                 <xs:element ref="fulfillment" minOccurs="0" maxOccurs="1" />
                 <xs:element ref="fraud-result-info" minOccurs="0" maxOccurs="1" />
                 <xs:element ref="level-3-data" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="transaction-initiator" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="store-card" minOccurs="0" maxOccurs="1"/>                
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+	
+	<xs:element name="transaction-initiator">
+        <xs:simpleType>
+            <xs:restriction base="xs:string" />
+        </xs:simpleType>
+    </xs:element>  
+    
+	<xs:element name="store-card">
+        <xs:simpleType>
+            <xs:restriction base="xs:boolean" />
+        </xs:simpleType>
+    </xs:element>     	
+	
 	<xs:element name="param-name">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />

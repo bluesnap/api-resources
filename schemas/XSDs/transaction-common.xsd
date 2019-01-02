@@ -37,4 +37,9 @@
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
+	<xs:element name="open-to-capture">
+		<xs:simpleType>
+			<xs:restriction base="xs:decimal"/>
+		</xs:simpleType>
+	</xs:element>
 </xs:schema>

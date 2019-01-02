@@ -19,6 +19,17 @@
 			<xs:sequence>
 				<xs:element ref="billing-contact-info" />
 				<xs:element ref="ecp" />
+				<xs:element ref="status" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="ecp-details">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="billing-contact-info" />
+				<xs:element ref="ecp" />
+				<xs:element ref="status" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

@@ -38,7 +38,7 @@
 	</xs:element>
 	<xs:element name="commodity-code">
 		<xs:simpleType>
-			<xs:restriction base="xs:long" />
+			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
 

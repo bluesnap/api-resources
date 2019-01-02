@@ -19,6 +19,7 @@
 			<xs:sequence>
 				<xs:element ref="billing-contact-info" />
 				<xs:element ref="sepa-direct-debit" />
+				<xs:element ref="status" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

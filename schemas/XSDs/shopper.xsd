@@ -53,6 +53,7 @@
 				<xs:element ref="shipping-contact-info" minOccurs="0" />
 				<xs:element ref="invoice-contacts-info" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="payment-info" minOccurs="0" />
+				<xs:element ref="chosen-payment-method" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="store-id" minOccurs="0" />
 				<xs:element ref="vat-code" minOccurs="0" />
 				<xs:element ref="shopper-currency" minOccurs="0" />
@@ -147,6 +148,24 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+	
+	<xs:element name="chosen-payment-method">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="chosen-payment-method-type" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="credit-card" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="ecp-info" minOccurs="0" maxOccurs="1" />			
+				<xs:element ref="sepa-direct-debit-info" minOccurs="0" maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="chosen-payment-method-type">
+			<xs:simpleType>
+				<xs:restriction base="xs:string" />
+			</xs:simpleType>
+	</xs:element>
+
 	<xs:element name="balance">
 		<xs:complexType>
 			<xs:sequence>

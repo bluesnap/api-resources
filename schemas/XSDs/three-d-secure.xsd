@@ -10,6 +10,7 @@
 				<xs:element ref="eci" minOccurs="0" />
 				<xs:element ref="cavv" minOccurs="0" />
 				<xs:element ref="xid" minOccurs="0" />
+				<xs:element ref="authentication-result" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -44,5 +45,10 @@
 		</xs:simpleType>
 	</xs:element>
 
+    <xs:element name="authentication-result">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
 
 </xs:schema>
