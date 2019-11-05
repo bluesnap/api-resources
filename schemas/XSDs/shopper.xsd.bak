@@ -11,7 +11,6 @@
 	<xs:include schemaLocation="three-d-info.xsd"/>
 	<xs:include schemaLocation="shipping-contact-info.xsd"/>
 	<xs:include schemaLocation="shopper-common.xsd"/>
-	<xs:include schemaLocation="three-d-secure.xsd"/>
 	
 	<xs:element name="vat-code">
 		<xs:simpleType>
@@ -43,13 +42,6 @@
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
-
-	<xs:element name="update-existing-subscriptions">
-		<xs:simpleType>
-			<xs:restriction base="xs:boolean" />
-		</xs:simpleType>
-	</xs:element>
-
 	<xs:element name="shopper-info">
 		<xs:complexType>
 			<xs:sequence>
@@ -99,9 +91,7 @@
 				<xs:element ref="web-info" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="fraud-info" minOccurs="0" maxOccurs="1"/>				
 				<xs:element ref="three-d-authenticated-info" minOccurs="0" maxOccurs="1" />
-				<xs:element ref="three-d-secure" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="wallet-id" minOccurs="0" />
-				<xs:element ref="transaction-order-source" minOccurs="0" maxOccurs="1"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -130,7 +120,6 @@
 				<xs:element ref="country" minOccurs="0" />
 				<xs:element ref="phone" minOccurs="0" />
 				<xs:element ref="fax" minOccurs="0" />
-				<xs:element ref="update-existing-subscriptions" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

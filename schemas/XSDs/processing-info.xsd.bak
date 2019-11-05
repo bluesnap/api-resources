@@ -4,9 +4,6 @@
 	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
 	targetNamespace="http://ws.plimus.com">
 
-	<xs:include schemaLocation="network-transaction-info.xsd"/>
-	<xs:include schemaLocation="authorization-code.xsd"/>
-
 	<xs:element name="processing-info">
 		<xs:complexType>
 			<xs:sequence>
@@ -16,15 +13,12 @@
 					maxOccurs="1" />
 				<xs:element ref="cvv-response-code" minOccurs="0"
 					maxOccurs="1" />
-				<xs:element ref="authorization-code" minOccurs="0"
-							maxOccurs="1" />
 				<xs:element ref="avs-response-code-zip" minOccurs="0"
 					maxOccurs="1" />
 				<xs:element ref="avs-response-code-address" minOccurs="0"
 					maxOccurs="1" />
 				<xs:element ref="avs-response-code-name" minOccurs="0"
 					maxOccurs="1" />
-				<xs:element ref="network-transaction-id" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -100,3 +94,4 @@
 	</xs:element>
 
 </xs:schema>
+    

@@ -45,11 +45,6 @@
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
-	<xs:element name="enable-google-pay">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>
-	</xs:element>
 	<xs:element name="enable-phone">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
@@ -210,7 +205,6 @@
 				<xs:element ref="enable-apple-pay" minOccurs="0" />
 				<xs:element ref="enable-sepa-direct-debit" minOccurs="0" />
 				<xs:element ref="enable-credit-card" minOccurs="0" />
-				<xs:element ref="enable-google-pay" minOccurs="0" />
 				<xs:element ref="enable-encrypt-callback-url" />
 				<xs:element ref="mobile-skin-id" minOccurs="0" />
 				<xs:element ref="store-name" minOccurs="0" />

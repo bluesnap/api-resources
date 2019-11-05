@@ -173,11 +173,6 @@
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
-	<xs:element name="refund-reserve">
-		<xs:simpleType>
-			<xs:restriction base="xs:decimal"/>
-		</xs:simpleType>
-	</xs:element>	
 	<xs:element name="last-four-ssn">
 		<xs:simpleType>
 			<xs:restriction base="xs:int" />
@@ -233,7 +228,6 @@
 			<xs:sequence>
 				<xs:element ref="payout-type" minOccurs="1" />
 				<xs:element ref="base-currency" minOccurs="0" />
-				<xs:element ref="refund-reserve" minOccurs="0" />
 				<xs:element ref="minimal-payout-amount" minOccurs="0" />
 				<xs:element ref="name-on-account" minOccurs="0" />
 				<xs:element ref="bank-account-class" minOccurs="0" />

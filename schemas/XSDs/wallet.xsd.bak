@@ -56,9 +56,11 @@
 	<xs:element name="apple-pay">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="encoded-payment-token" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="encoded-payment-token" minOccurs="0"
+					maxOccurs="1" />
 				<xs:element ref="pf-token" minOccurs="0" maxOccurs="1" />
-				<xs:element ref="card-last-four-digits" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="card-last-four-digits" minOccurs="0"
+					maxOccurs="1" />
 				<xs:element ref="card-type" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="card-sub-type" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="card-category" minOccurs="0" maxOccurs="1"/>
@@ -66,9 +68,12 @@
 				<xs:element ref="card-regulated" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="issuing-country-code" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="issuing-bank" minOccurs="0" maxOccurs="1"/>
-				<xs:element ref="dpan-last-four-digits" minOccurs="0" maxOccurs="1" />
-				<xs:element ref="dpan-expiration-month" minOccurs="0" maxOccurs="1" />
-				<xs:element ref="dpan-expiration-year" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="dpan-last-four-digits" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="dpan-expiration-month" minOccurs="0"
+					maxOccurs="1" />
+				<xs:element ref="dpan-expiration-year" minOccurs="0"
+					maxOccurs="1" />
 				<xs:element ref="domain" maxOccurs="unbounded">
 					<xs:annotation>
 						<xs:appinfo>
@@ -83,27 +88,18 @@
 	<xs:element name="tokenized-card">
 		<xs:complexType>
 			<xs:sequence>
-				<!-- For Input: -->
-				<xs:element ref="dpan" minOccurs="0" maxOccurs="1" />
-				<xs:element ref="auth-method" minOccurs="0" maxOccurs="1" />
-				<xs:element ref="cryptogram" minOccurs="0" maxOccurs="1" />
-				<xs:element ref="eci-indicator" minOccurs="0" maxOccurs="1" />
-				<xs:element ref="wallet-transaction-id" minOccurs="0" maxOccurs="1" />
-				
-				<!-- For Input and Output: -->
-				<xs:element ref="dpan-expiration-month" minOccurs="0" maxOccurs="1" />
-				<xs:element ref="dpan-expiration-year" minOccurs="0" maxOccurs="1" />
-				<xs:element ref="dpan-last-four-digits" minOccurs="0" maxOccurs="1" />
-				<xs:element ref="card-last-four-digits" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="card-last-four-digits" minOccurs="0"
+					maxOccurs="1" />
 				<xs:element ref="card-type" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="card-sub-type" minOccurs="0" maxOccurs="1" />
-
-				<!-- For Output: -->
 				<xs:element ref="card-category" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="bin-category" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="card-regulated" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="issuing-country-code" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="issuing-bank" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="dpan-expiration-month" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="dpan-expiration-year" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="dpan-last-four-digits" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element> 
@@ -119,37 +115,6 @@
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
-
-	<xs:element name="dpan">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>
-	</xs:element>
-
-	<xs:element name="auth-method">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>
-	</xs:element>
-
-	<xs:element name="cryptogram">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>
-	</xs:element>
-
-	<xs:element name="eci-indicator">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>
-	</xs:element>
-
-	<xs:element name="wallet-transaction-id">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>
-	</xs:element>
-
 
 	<xs:element name="dpan-last-four-digits">
 		<xs:simpleType>

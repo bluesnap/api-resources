@@ -19,7 +19,6 @@
 				<xs:element ref="from-date"  minOccurs="0" />
 				<xs:element ref="to-date"  minOccurs="0" />
 				<xs:element ref="charge-type"  minOccurs="0" />
-				<xs:element ref="seller-order-id"  minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

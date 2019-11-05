@@ -10,10 +10,7 @@
 				<xs:element ref="eci" minOccurs="0" />
 				<xs:element ref="cavv" minOccurs="0" />
 				<xs:element ref="xid" minOccurs="0" />
-				<xs:element ref="ds-transaction-id" minOccurs="0" />
-				<xs:element ref="three-d-secure-version" minOccurs="0" />
 				<xs:element ref="authentication-result" minOccurs="0" />
-				<xs:element ref="three-d-secure-reference-id" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -48,27 +45,9 @@
 		</xs:simpleType>
 	</xs:element>
 
-	<xs:element name="ds-transaction-id">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>
-	</xs:element>
-
-	<xs:element name="three-d-secure-version">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>
-	</xs:element>
-
     <xs:element name="authentication-result">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
-		</xs:simpleType>
-	</xs:element>
-
-	<xs:element name="three-d-secure-reference-id">
-		<xs:simpleType>
-			<xs:restriction base="xs:long" />
 		</xs:simpleType>
 	</xs:element>
 

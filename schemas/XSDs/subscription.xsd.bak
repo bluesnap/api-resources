@@ -3,16 +3,13 @@
 	targetNamespace="http://ws.plimus.com">
 	<xs:include schemaLocation="order.xsd"/>
 	<xs:include schemaLocation="subscription-charge.xsd"/>
-	<xs:include schemaLocation="item-price.xsd" />
 	<xs:element name="subscription">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="subscription-id" />
 				<xs:element ref="status" />
-				<xs:element ref="quantity" minOccurs="0" />
 				<xs:element ref="cancellation-reason" minOccurs="0" />
 				<xs:element ref="underlying-sku-id" />
-				<xs:element ref="underlying-sku-name" />
 				<xs:element ref="shopper-id" />
 				<xs:element ref="recurring-charge" minOccurs="0" />
 				<xs:element ref="credit-card" minOccurs="0" />	
@@ -41,11 +38,6 @@
 	<xs:element name="underlying-sku-id">
 		<xs:simpleType>
 			<xs:restriction base="xs:long" />
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="underlying-sku-name">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
 	<xs:element name="recurring-charge">

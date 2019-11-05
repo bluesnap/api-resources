@@ -15,8 +15,6 @@
 	<xs:include schemaLocation="order-common.xsd"/>
 	<xs:include schemaLocation="wallet.xsd"/>
 	<xs:include schemaLocation="level-3-data.xsd"/>
-    <xs:include schemaLocation="network-transaction-info.xsd"/>
-    <xs:include schemaLocation="authorization-code.xsd"/>
 	
 	<xs:element name="param-value">
 		<xs:simpleType>
@@ -138,7 +136,6 @@
 				<xs:element ref="ecp"/>
 				<xs:element ref="sepa-direct-debit"/>
 				<xs:element ref="invoice-contact-info"/>
-                <xs:element ref="authorization-code"/>
 				<xs:element ref="skus"/>
 			</xs:sequence>
 		</xs:complexType>
@@ -186,11 +183,8 @@
                 <xs:element ref="fulfillment" minOccurs="0" maxOccurs="1" />
                 <xs:element ref="fraud-result-info" minOccurs="0" maxOccurs="1" />
                 <xs:element ref="level-3-data" minOccurs="0" maxOccurs="1" />
-                <xs:element ref="three-d-secure" minOccurs="0" maxOccurs="1" />
                 <xs:element ref="transaction-initiator" minOccurs="0" maxOccurs="1"/>
-                <xs:element ref="network-transaction-info" minOccurs="0" maxOccurs="1" />
                 <xs:element ref="store-card" minOccurs="0" maxOccurs="1"/>                
-                <xs:element ref="transaction-order-source" minOccurs="0" maxOccurs="1"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -207,12 +201,6 @@
         </xs:simpleType>
     </xs:element>     	
 	
-    <xs:element name="transaction-order-source">
-        <xs:simpleType>
-            <xs:restriction base="xs:string" />
-        </xs:simpleType>
-    </xs:element>
-
 	<xs:element name="param-name">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
