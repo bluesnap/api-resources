@@ -4,6 +4,7 @@
 	targetNamespace="http://ws.plimus.com">
 	<xs:include schemaLocation="order.xsd"/>
 	<xs:include schemaLocation="price.xsd"/>
+	<xs:include schemaLocation="fraud-events.xsd"/>
 	<xs:element name="message-value">
 		<xs:simpleType>
 			<xs:restriction base="xs:string"/>
@@ -60,23 +61,6 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="fraud-events">
-		<xs:complexType>
-			<xs:sequence>
-			    <xs:element ref="fraud-reference-id" minOccurs="0"  maxOccurs="1"/>
-				<xs:element ref="fraud-event" maxOccurs="unbounded"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>	
-	<xs:element name="fraud-event">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="fraud-event-code" minOccurs="0"/>
-				<xs:element ref="fraud-event-decision" minOccurs="0"/>
-				<xs:element ref="fraud-event-expression" minOccurs="0"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>	
 	<xs:element name="total-subscription-charge-cost">
 		<xs:simpleType>
 			<xs:restriction base="xs:decimal" />
@@ -111,7 +95,7 @@
 			<xs:restriction base="xs:string"/>
 		</xs:simpleType>
 	</xs:element>
-    <xs:element name="fraud-reference-id">
+   <!--  <xs:element name="fraud-reference-id">
         <xs:simpleType>
             <xs:restriction base="xs:string"/>
         </xs:simpleType>
@@ -130,5 +114,5 @@
 		<xs:simpleType>
 			<xs:restriction base="xs:string"/>
 		</xs:simpleType>
-	</xs:element>			
+	</xs:element>			 -->
 </xs:schema>
