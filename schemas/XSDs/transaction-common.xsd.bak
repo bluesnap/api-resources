@@ -42,14 +42,4 @@
 			<xs:restriction base="xs:decimal"/>
 		</xs:simpleType>
 	</xs:element>
-	<xs:element name="transaction-approval-date">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="transaction-approval-time">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>
-	</xs:element>
 </xs:schema>
