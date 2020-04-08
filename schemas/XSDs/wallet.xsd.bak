@@ -82,7 +82,7 @@
 
 	<xs:element name="tokenized-card">
 		<xs:complexType>
-			<xs:sequence> 
+			<xs:sequence>
 				<!-- For Input: -->
 				<xs:element ref="dpan" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="auth-method" minOccurs="0" maxOccurs="1" />

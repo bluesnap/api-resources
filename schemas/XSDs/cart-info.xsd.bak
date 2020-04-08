@@ -19,6 +19,9 @@
 				<xs:element ref="country" minOccurs="0"/>
 				<xs:element ref="state" minOccurs="0"/>
 				<xs:element ref="store-id" minOccurs="0"/>
+				<xs:element ref="zip" minOccurs="0"/>
+				<xs:element ref="city" minOccurs="0"/>
+				<xs:element ref="address" minOccurs="0"/>		
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>	
