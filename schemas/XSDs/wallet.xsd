@@ -76,6 +76,13 @@
 						</xs:appinfo>
 					</xs:annotation>
 				</xs:element>
+				<xs:element ref="unregister-domain" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:appinfo>
+							<jaxb:property name="unregister-domains" />
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -115,6 +122,12 @@
 	</xs:element>
 	
 	<xs:element name="domain">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="unregister-domain">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
