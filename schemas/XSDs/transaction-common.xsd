@@ -52,4 +52,11 @@
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
+
+	<xs:element name="tax-reference">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
 </xs:schema>
