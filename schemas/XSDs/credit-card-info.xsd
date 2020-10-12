@@ -43,6 +43,7 @@
 				<xs:element ref="card-sub-type" minOccurs="0" />
 				<xs:element ref="card-category" minOccurs="0"/>
 				<xs:element ref="bin-category" minOccurs="0"/>
+				<xs:element ref="bin-number" minOccurs="0"/>
 				<xs:element ref="card-regulated" minOccurs="0"/>
 				<xs:element ref="issuing-bank" minOccurs="0"/>
 				<xs:element ref="expiration-month" minOccurs="0" />
@@ -134,6 +135,11 @@
 		</xs:simpleType>
 	</xs:element>
 	<xs:element name="bin-category">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="bin-number">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
