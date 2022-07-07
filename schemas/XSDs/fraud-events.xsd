@@ -7,6 +7,7 @@
 		<xs:complexType>
 			<xs:sequence>
 			    <xs:element ref="fraud-reference-id" minOccurs="0"  maxOccurs="1"/>
+				<xs:element ref="fraud-transaction-id" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="fraud-event" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
@@ -19,13 +20,18 @@
 				<xs:element ref="fraud-event-expression" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
-	</xs:element>	
-    <xs:element name="fraud-reference-id">
-        <xs:simpleType>
-            <xs:restriction base="xs:string"/>
-        </xs:simpleType>
-    </xs:element>   
-    <xs:element name="fraud-event-code">
+	</xs:element>
+	<xs:element name="fraud-reference-id">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="fraud-transaction-id">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="fraud-event-code">
         <xs:simpleType>
             <xs:restriction base="xs:string"/>
         </xs:simpleType>

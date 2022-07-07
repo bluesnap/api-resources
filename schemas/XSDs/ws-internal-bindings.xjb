@@ -1,0 +1,28 @@
+<jaxb:bindings 
+	version="2.1"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:annox="http://annox.dev.java.net"
+    jaxb:extensionBindingPrefixes="annox"
+    xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"	   
+	  schemaLocation="shopper.xsd" node="/xs:schema">
+	
+	<!--============================================================================================================-->
+	<!--=========================================== RESOURCE SUFFIX ================================================-->
+	<!--============================================================================================================-->
+	
+	<jaxb:schemaBindings>
+		<jaxb:nameXmlTransform>
+			<jaxb:elementName suffix="Resource" />
+		</jaxb:nameXmlTransform>
+	</jaxb:schemaBindings>
+	
+  	<!--============================================================================================================-->
+	<!--============================================ GLOBAL BINDINGS ===============================================-->
+	<!--============================================================================================================-->
+	
+	<jaxb:globalBindings>
+		<xjc:javaType name="java.util.Date" xmlType="xs:date" adapter="com.plimus.DateAdapter"/>
+	</jaxb:globalBindings>	
+		  
+</jaxb:bindings>

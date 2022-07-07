@@ -17,6 +17,8 @@
     <xs:include schemaLocation="level-3-data.xsd"/>
     <xs:include schemaLocation="network-transaction-info.xsd"/>
     <xs:include schemaLocation="authorization-code.xsd"/>
+    <xs:include schemaLocation="becs-direct-debit-info.xsd"/>
+    <xs:include schemaLocation="acss-direct-debit-info.xsd"/>
 
     <xs:element name="param-value">
         <xs:simpleType>
@@ -64,6 +66,8 @@
                 <xs:element ref="credit-card" minOccurs="0"/>
                 <xs:element ref="ecp" minOccurs="0" />
                 <xs:element ref="sepa-direct-debit" minOccurs="0" />
+                <xs:element ref="becs-direct-debit" minOccurs="0" />
+                <xs:element ref="acss-direct-debit" minOccurs="0" />
                 <xs:element ref="wallet" minOccurs="0" maxOccurs="1" />
                 <xs:element ref="invoice-contact-info" minOccurs="0" />
                 <xs:element ref="paypal" minOccurs="0" />
@@ -137,6 +141,8 @@
                 <xs:element ref="paypal-transaction-data" minOccurs="0" />
                 <xs:element ref="ecp"/>
                 <xs:element ref="sepa-direct-debit"/>
+                <xs:element ref="becs-direct-debit"/>
+                <xs:element ref="acss-direct-debit"/>
                 <xs:element ref="invoice-contact-info"/>
                 <xs:element ref="authorization-code"/>
                 <xs:element ref="skus"/>
@@ -161,6 +167,11 @@
         </xs:simpleType>
     </xs:element>
     <xs:element name="date-created">
+        <xs:simpleType>
+            <xs:restriction base="xs:string" />
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="time-created">
         <xs:simpleType>
             <xs:restriction base="xs:string" />
         </xs:simpleType>

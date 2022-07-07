@@ -5,6 +5,7 @@
 	
 	<!-- For billing-contact-info. -->
 	<xs:include schemaLocation="credit-card-info.xsd"/>
+	<xs:include schemaLocation="common-account.xsd"/>
 	
 	<xs:element name="ecps-info">
 		<xs:complexType>
@@ -20,6 +21,8 @@
 				<xs:element ref="billing-contact-info" />
 				<xs:element ref="ecp" />
 				<xs:element ref="status" />
+				<xs:element ref="date-created" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="time-created" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -30,6 +33,8 @@
 				<xs:element ref="billing-contact-info" />
 				<xs:element ref="ecp" />
 				<xs:element ref="status" />
+				<xs:element ref="date-created" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="time-created" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -44,36 +49,6 @@
 				<xs:element ref="public-routing-number" />
 			</xs:sequence>
 		</xs:complexType>
-	</xs:element>
-
-	<xs:element name="account-number">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>	
-	</xs:element>
-
-	<xs:element name="account-type">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>	
-	</xs:element>
-
-	<xs:element name="routing-number">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>	
-	</xs:element>
-
-	<xs:element name="public-account-number">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>	
-	</xs:element>
-
-	<xs:element name="public-routing-number">
-		<xs:simpleType>
-			<xs:restriction base="xs:string" />
-		</xs:simpleType>	
 	</xs:element>
 
 </xs:schema>

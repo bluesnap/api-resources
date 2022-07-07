@@ -57,11 +57,6 @@
             </xs:restriction>
         </xs:simpleType>
     </xs:element>
-     <xs:element name="fraud-transaction-id">
-        <xs:simpleType>
-            <xs:restriction base="xs:string" />
-        </xs:simpleType>
-    </xs:element>
       <!--  <xs:element name="fraud-events">
 		<xs:complexType>
 			<xs:sequence>

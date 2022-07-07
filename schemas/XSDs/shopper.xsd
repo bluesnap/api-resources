@@ -102,6 +102,8 @@
 				<xs:element ref="three-d-secure" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="wallet-id" minOccurs="0" />
 				<xs:element ref="transaction-order-source" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="date-created" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="time-created" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -147,6 +149,8 @@
 				<xs:element ref="credit-cards-info" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="ecps-info" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="sepa-direct-debits-info" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="becs-direct-debits-info" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="acss-direct-debits-info" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="balance" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
@@ -167,6 +171,8 @@
 				<xs:element ref="credit-card" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="ecp-info" minOccurs="0" maxOccurs="1" />			
 				<xs:element ref="sepa-direct-debit-info" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="becs-direct-debit-info" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="acss-direct-debit-info" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

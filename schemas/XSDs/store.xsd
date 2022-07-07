@@ -139,6 +139,16 @@
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
+	<xs:element name="enable-becs-direct-debit">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="enable-acss-direct-debit">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
 
 	<xs:element name="enable-encrypt-callback-url">
 		<xs:simpleType>
@@ -209,6 +219,8 @@
 				<xs:element ref="enable-wallet-masterpass" minOccurs="0" />
 				<xs:element ref="enable-apple-pay" minOccurs="0" />
 				<xs:element ref="enable-sepa-direct-debit" minOccurs="0" />
+				<xs:element ref="enable-becs-direct-debit" minOccurs="0" />
+				<xs:element ref="enable-acss-direct-debit" minOccurs="0" />
 				<xs:element ref="enable-credit-card" minOccurs="0" />
 				<xs:element ref="enable-google-pay" minOccurs="0" />
 				<xs:element ref="enable-encrypt-callback-url" />

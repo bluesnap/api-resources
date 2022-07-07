@@ -59,4 +59,16 @@
 		</xs:simpleType>
 	</xs:element>
 
+	<xs:element name="initial-tax-reference">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="recurring-tax-reference">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
 </xs:schema>

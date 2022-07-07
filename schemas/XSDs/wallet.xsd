@@ -230,4 +230,33 @@
 		</xs:simpleType>
 	</xs:element>
 
+	<xs:element name="api-keys">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="key" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="key-usage" minOccurs="0" maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="key">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="key-usage">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="wallet-keys">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="api-keys" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
 </xs:schema>
