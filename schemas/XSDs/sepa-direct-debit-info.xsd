@@ -20,6 +20,8 @@
 				<xs:element ref="billing-contact-info" />
 				<xs:element ref="sepa-direct-debit" />
 				<xs:element ref="status" />
+				<xs:element ref="date-created" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="time-created" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

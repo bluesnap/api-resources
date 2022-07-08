@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+	targetNamespace="http://ws.plimus.com">
+	<xs:include schemaLocation="common-account.xsd"/>
+	<xs:include schemaLocation="credit-card-info.xsd" />
+	<xs:include schemaLocation="debit-agreement.xsd"/>
+
+	<xs:element name="acss-direct-debits-info">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="acss-direct-debit-info" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="acss-direct-debit-info">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="billing-contact-info" />
+				<xs:element ref="acss-direct-debit" />
+				<xs:element ref="status" />
+				<xs:element ref="date-created" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="time-created" minOccurs="0" maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="acss-direct-debit">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="routing-number" />
+				<xs:element ref="account-number" />
+				<xs:element ref="account-type" />
+				<xs:element ref="public-account-number" />
+				<xs:element ref="agreement-id" minOccurs="0" maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

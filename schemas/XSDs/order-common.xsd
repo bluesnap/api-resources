@@ -3,19 +3,29 @@
 <xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
 	targetNamespace="http://ws.plimus.com">
+
 	<xs:element name="order-id">
 		<xs:simpleType>
 			<xs:restriction base="xs:long" />
 		</xs:simpleType>
 	</xs:element>
+
 	<xs:element name="authorized-by-shopper">
 		<xs:simpleType>
 			<xs:restriction base="xs:boolean" />
 		</xs:simpleType>
 	</xs:element>
+
 	<xs:element name="payment-method">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
+
+	<xs:element name="pre-notification-ref">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
 </xs:schema>

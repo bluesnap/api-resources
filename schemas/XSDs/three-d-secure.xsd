@@ -7,10 +7,17 @@
 			<xs:sequence>
 				<xs:element ref="three-d-secure-token" minOccurs="0" />
 				<xs:element ref="three-d-secure-result-token" minOccurs="0" />
+				<xs:element ref="three-d-secure-status" minOccurs="0" />
 				<xs:element ref="eci" minOccurs="0" />
 				<xs:element ref="cavv" minOccurs="0" />
+				<xs:element ref="cavv-algorithm" minOccurs="0" />
 				<xs:element ref="xid" minOccurs="0" />
 				<xs:element ref="ds-transaction-id" minOccurs="0" />
+				<xs:element ref="acs-transaction-id" minOccurs="0" />
+				<xs:element ref="enrollment-status" minOccurs="0" />
+				<xs:element ref="network-score" minOccurs="0" />
+				<xs:element ref="reason-code" minOccurs="0" />
+				<xs:element ref="challenge-required" minOccurs="0" />
 				<xs:element ref="three-d-secure-version" minOccurs="0" />
 				<xs:element ref="authentication-result" minOccurs="0" />
 				<xs:element ref="three-d-secure-reference-id" minOccurs="0" />
@@ -41,6 +48,12 @@
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
+
+	<xs:element name="cavv-algorithm">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
 	
 	<xs:element name="xid">
 		<xs:simpleType>
@@ -54,13 +67,49 @@
 		</xs:simpleType>
 	</xs:element>
 
+	<xs:element name="acs-transaction-id">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="enrollment-status">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="network-score">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="reason-code">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="challenge-required">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean" />
+		</xs:simpleType>
+	</xs:element>
+
 	<xs:element name="three-d-secure-version">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
 
-    <xs:element name="authentication-result">
+	<xs:element name="three-d-secure-status">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="authentication-result">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
