@@ -16,6 +16,9 @@
 				<xs:element ref="status" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="date-created" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="time-created" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="date-modified" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="time-modified" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="collect-cvv-for-latam" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -176,6 +179,11 @@
 	<xs:element name="arn">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="collect-cvv-for-latam">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean" />
 		</xs:simpleType>
 	</xs:element>
 </xs:schema>

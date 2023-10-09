@@ -176,6 +176,16 @@
             <xs:restriction base="xs:string" />
         </xs:simpleType>
     </xs:element>
+    <xs:element name="date-modified">
+        <xs:simpleType>
+            <xs:restriction base="xs:string" />
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="time-modified">
+        <xs:simpleType>
+            <xs:restriction base="xs:string" />
+        </xs:simpleType>
+    </xs:element>
     <xs:element name="invoice-status">
         <xs:simpleType>
             <xs:restriction base="xs:string" />
