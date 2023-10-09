@@ -25,6 +25,7 @@
 				<xs:element ref="avs-response-code-name" minOccurs="0"
 							maxOccurs="1" />
 				<xs:element ref="network-transaction-id" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="transaction-region" minOccurs="0" maxOccurs="1"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -94,6 +95,12 @@
 	</xs:element>
 
 	<xs:element name="avs-response-code-name">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="transaction-region">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>

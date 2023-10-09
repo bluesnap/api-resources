@@ -111,16 +111,18 @@
 				<xs:element ref="card-regulated" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="issuing-country-code" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="issuing-bank" minOccurs="0" maxOccurs="1"/>
+
+				<xs:element ref="account-tokenized-cc-id" minOccurs="0" maxOccurs="1"/>
 			</xs:sequence>
 		</xs:complexType>
-	</xs:element> 
-	
+	</xs:element>
+
 	<xs:element name="encoded-payment-token">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
 		</xs:simpleType>
 	</xs:element>
-	
+
 	<xs:element name="domain">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
@@ -257,6 +259,12 @@
 				<xs:element ref="api-keys" minOccurs="0" maxOccurs="unbounded" />
 			</xs:sequence>
 		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="account-tokenized-cc-id">
+		<xs:simpleType>
+			<xs:restriction base="xs:long" />
+		</xs:simpleType>
 	</xs:element>
 
 </xs:schema>

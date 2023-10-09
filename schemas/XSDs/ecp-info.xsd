@@ -23,6 +23,8 @@
 				<xs:element ref="status" />
 				<xs:element ref="date-created" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="time-created" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="date-modified" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="time-modified" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -35,6 +37,8 @@
 				<xs:element ref="status" />
 				<xs:element ref="date-created" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="time-created" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="date-modified" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="time-modified" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
