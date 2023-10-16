@@ -27,10 +27,8 @@
 
 				<!-- for the POST response -->
 				<xs:element ref="wallet-token" minOccurs="0" maxOccurs="1" />
-				<xs:element ref="merchant-checkout-id" minOccurs="0"
-					maxOccurs="1" />
-				<xs:element ref="allowed-card-types" minOccurs="0"
-					maxOccurs="1" />
+				<xs:element ref="merchant-checkout-id" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="allowed-card-types" minOccurs="0" maxOccurs="1" />
 
 				<!-- for the GET response -->
 				<xs:element ref="first-name" minOccurs="0" />
@@ -39,10 +37,8 @@
 				<xs:element ref="country" minOccurs="0" />
 				<xs:element ref="phone" minOccurs="0" />
 				<xs:element ref="credit-card" minOccurs="0" maxOccurs="1" />
-				<xs:element ref="billing-contact-info" minOccurs="0"
-					maxOccurs="1" />
-				<xs:element ref="shipping-contact-info" minOccurs="0"
-					maxOccurs="1" />
+				<xs:element ref="billing-contact-info" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="shipping-contact-info" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="apple-pay" minOccurs="0" maxOccurs="1" />
 
 				<!-- input for Tokenized wallets (like GooglePay), requires filling wallet-type above -->
@@ -66,6 +62,7 @@
 				<xs:element ref="card-regulated" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="issuing-country-code" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="issuing-bank" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="dpan-bin" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="dpan-last-four-digits" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="dpan-expiration-month" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="dpan-expiration-year" minOccurs="0" maxOccurs="1" />
@@ -100,6 +97,7 @@
 				<!-- For Input and Output: -->
 				<xs:element ref="dpan-expiration-month" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="dpan-expiration-year" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="dpan-bin" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="dpan-last-four-digits" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="card-last-four-digits" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="card-type" minOccurs="0" maxOccurs="1" />
@@ -165,6 +163,12 @@
 		</xs:simpleType>
 	</xs:element>
 
+
+	<xs:element name="dpan-bin">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
 
 	<xs:element name="dpan-last-four-digits">
 		<xs:simpleType>
