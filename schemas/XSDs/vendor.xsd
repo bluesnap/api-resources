@@ -294,6 +294,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="vendor-id" minOccurs="0"/>
+                <xs:element ref="merchant-id" minOccurs="0"/>
                 <xs:element ref="email" minOccurs="0"/>
                 <xs:element ref="name" minOccurs="0"/>
                 <xs:element ref="vendor-url" minOccurs="0"/>

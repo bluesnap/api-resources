@@ -43,6 +43,12 @@
         </xs:simpleType>
     </xs:element>
 
+    <xs:element name="merchant-id">
+        <xs:simpleType>
+            <xs:restriction base="xs:long"/>
+        </xs:simpleType>
+    </xs:element>
+
     <xs:element name="vendors-info">
         <xs:complexType>
             <xs:sequence>
