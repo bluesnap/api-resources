@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ws.plimus.com" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+	targetNamespace="http://ws.plimus.com">
+	<xs:include schemaLocation="credit-card-info.xsd" />
+	<xs:include schemaLocation="sepa-direct-debit-info.xsd" />
+
+	<xs:element name="pay-by-banks-info">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="pay-by-bank-info" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="pay-by-bank-info">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="billing-contact-info" />
+				<xs:element ref="pay-by-bank" />
+				<xs:element ref="status" />
+				<xs:element ref="date-created" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="time-created" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="date-modified" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="time-modified" minOccurs="0" maxOccurs="1" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="pay-by-bank">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="iban" />
+				<xs:element ref="iban-first-four" />
+				<xs:element ref="iban-last-four" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

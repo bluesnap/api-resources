@@ -31,6 +31,7 @@
 				<xs:element ref="last-charge-result" minOccurs="0"/>
 				<xs:element ref="subscription-charges" minOccurs="0"/>
 				<xs:element ref="network-transaction-info" minOccurs="0" maxOccurs="1" />
+				<xs:element ref="vendors-info" minOccurs="0" maxOccurs="1" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

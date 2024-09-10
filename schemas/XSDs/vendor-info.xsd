@@ -9,14 +9,10 @@
                 <xs:element ref="vendor-id" minOccurs="1" maxOccurs="1"/>
                 <xs:element ref="commission-amount" minOccurs="0" maxOccurs="1"/>
                 <xs:element ref="commission-percent" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="recurring-commission-amount" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="recurring-commission-percent" minOccurs="0" maxOccurs="1"/>
             </xs:sequence>
         </xs:complexType>
-    </xs:element>
-
-    <xs:element name="commission-amount">
-        <xs:simpleType>
-            <xs:restriction base="xs:decimal"/>
-        </xs:simpleType>
     </xs:element>
 
     <xs:element name="vendor-url">
@@ -31,7 +27,25 @@
         </xs:simpleType>
     </xs:element>
 
+    <xs:element name="commission-amount">
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal"/>
+        </xs:simpleType>
+    </xs:element>
+
     <xs:element name="commission-percent">
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="recurring-commission-amount">
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="recurring-commission-percent">
         <xs:simpleType>
             <xs:restriction base="xs:decimal"/>
         </xs:simpleType>
