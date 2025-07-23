@@ -128,6 +128,7 @@
                 <xs:element ref="status"/>
                 <xs:element ref="date-due"/>
                 <xs:element ref="date-created"/>
+                <xs:element ref="capture-date-created" minOccurs="0" maxOccurs="1"/>
                 <xs:element ref="amount"/>
                 <xs:element ref="tax"/>
                 <xs:element ref="tax-rate"/>
@@ -167,6 +168,11 @@
         </xs:simpleType>
     </xs:element>
     <xs:element name="date-created">
+        <xs:simpleType>
+            <xs:restriction base="xs:string" />
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="capture-date-created">
         <xs:simpleType>
             <xs:restriction base="xs:string" />
         </xs:simpleType>
