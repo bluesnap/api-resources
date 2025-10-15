@@ -26,6 +26,7 @@
 							maxOccurs="1" />
 				<xs:element ref="network-transaction-id" minOccurs="0" maxOccurs="1" />
 				<xs:element ref="transaction-region" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="supports-multi-partial-capture" minOccurs="0" maxOccurs="1"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -103,6 +104,12 @@
 	<xs:element name="transaction-region">
 		<xs:simpleType>
 			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="supports-multi-partial-capture">
+		<xs:simpleType>
+			<xs:restriction base="xs:boolean" />
 		</xs:simpleType>
 	</xs:element>
 
