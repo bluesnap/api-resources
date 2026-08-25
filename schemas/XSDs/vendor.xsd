@@ -46,12 +46,13 @@
             <xs:restriction base="xs:long"/>
         </xs:simpleType>
     </xs:element>
-    <xs:element name="delay">
+    <xs:element name="review-delay">
         <xs:simpleType>
             <xs:restriction base="xs:int"/>
         </xs:simpleType>
     </xs:element>
-    <xs:element name="frequency">
+
+    <xs:element name="payout-frequency">
         <xs:simpleType>
             <xs:restriction base="xs:string">
                 <xs:enumeration value="MONTHLY"/>
@@ -61,6 +62,7 @@
             </xs:restriction>
         </xs:simpleType>
     </xs:element>
+
     <xs:element name="account-status">
         <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -69,6 +71,7 @@
             </xs:restriction>
         </xs:simpleType>
     </xs:element>
+
     <xs:element name="payout-type">
         <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -113,6 +116,12 @@
         </xs:simpleType>
     </xs:element>
 
+    <xs:element name="payout-payment-type">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
     <xs:element name="bank-id">
         <xs:simpleType>
             <xs:restriction base="xs:string"/>
@@ -128,60 +137,171 @@
             <xs:restriction base="xs:string"/>
         </xs:simpleType>
     </xs:element>
+
     <xs:element name="recurring-commission">
         <xs:simpleType>
             <xs:restriction base="xs:string"/>
         </xs:simpleType>
     </xs:element>
+
     <xs:element name="driver-license-number">
         <xs:simpleType>
             <xs:restriction base="xs:string"/>
         </xs:simpleType>
     </xs:element>
+
     <xs:element name="passport-number">
         <xs:simpleType>
             <xs:restriction base="xs:string"/>
         </xs:simpleType>
     </xs:element>
+
     <xs:element name="minimal-payout-amount">
         <xs:simpleType>
             <xs:restriction base="xs:string"/>
         </xs:simpleType>
     </xs:element>
+
     <xs:element name="missing-items">
         <xs:simpleType>
             <xs:restriction base="xs:string"/>
         </xs:simpleType>
     </xs:element>
+
     <xs:element name="decline-reason">
         <xs:simpleType>
             <xs:restriction base="xs:string"/>
         </xs:simpleType>
     </xs:element>
+
     <xs:element name="payout-status">
         <xs:simpleType>
             <xs:restriction base="xs:string"/>
         </xs:simpleType>
     </xs:element>
+
     <xs:element name="dob">
         <xs:simpleType>
             <xs:restriction base="xs:string"/>
         </xs:simpleType>
     </xs:element>
+
     <xs:element name="default-payout-currency">
         <xs:simpleType>
             <xs:restriction base="xs:string"/>
         </xs:simpleType>
     </xs:element>
+
     <xs:element name="refund-reserve">
         <xs:simpleType>
             <xs:restriction base="xs:decimal"/>
         </xs:simpleType>
     </xs:element>
+
     <xs:element name="last-four-ssn">
         <xs:simpleType>
             <xs:restriction base="xs:int"/>
         </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="zip-code">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="intermediary-bic">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="intermediary-bank-name">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="intermediary-bank-state">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="intermediary-bank-country">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="ach-account-class">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="ach-account-type">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="additional-information">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="account-id">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="default-currency">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="default-legal-entity">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="keep-on-merchant-reserve">
+        <xs:simpleType>
+            <xs:restriction base="xs:int"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="minimum-payment-amount">
+        <xs:simpleType>
+            <xs:restriction base="xs:int"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="bank-details-id">
+        <xs:simpleType>
+            <xs:restriction base="xs:long"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="merchant-reserve">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="keep-on-merchant-reserve" minOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="reserve">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="merchant-reserve" minOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
     </xs:element>
 
     <xs:element name="vendor-principal">
@@ -229,28 +349,92 @@
     </xs:element>
 
     <xs:element name="payout-info">
+    <xs:complexType>
+    <xs:sequence>
+    </xs:sequence>
+    </xs:complexType>
+    </xs:element>
+
+    <xs:element name="payout-configuration">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="payout-type" minOccurs="1"/>
-                <xs:element ref="base-currency" minOccurs="0"/>
-                <xs:element ref="refund-reserve" minOccurs="0"/>
-                <xs:element ref="minimal-payout-amount" minOccurs="0"/>
-                <xs:element ref="name-on-account" minOccurs="0"/>
-                <xs:element ref="bank-account-class" minOccurs="0"/>
-                <xs:element ref="bank-account-type" minOccurs="0"/>
-                <xs:element ref="swift-bic" minOccurs="0"/>
-                <xs:element ref="bank-name" minOccurs="0"/>
-                <xs:element ref="bank-id" minOccurs="0"/>
+                <xs:element ref="payout-frequency" minOccurs="0"/>
+                <xs:element ref="review-delay" minOccurs="0"/>
+                <xs:element ref="default-legal-entity" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="regions" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="terms-of-service">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="accepted-date" minOccurs="0"/>
+                <xs:element ref="vendor-ip" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="accepted-date">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="vendor-ip">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="bank-details">
+        <xs:complexType>
+            <xs:sequence>
                 <xs:element ref="country" minOccurs="0"/>
-                <xs:element ref="city" minOccurs="0"/>
-                <xs:element ref="address" minOccurs="0"/>
                 <xs:element ref="state" minOccurs="0"/>
-                <xs:element ref="zip" minOccurs="0"/>
-                <xs:element ref="sort-code" minOccurs="0"/>
-                <xs:element ref="iban" minOccurs="0"/>
-                <xs:element ref="bank-account-id" minOccurs="0"/>
-                <xs:element ref="intermediary-bank-info" minOccurs="0"/>
+                <xs:element ref="city" minOccurs="0"/>
+                <xs:element ref="address1" minOccurs="0"/>
+                <xs:element ref="address2" minOccurs="0"/>
+                <xs:element ref="zip-code" minOccurs="0"/>
+                <xs:element ref="intermediary-bic" minOccurs="0"/>
+                <xs:element ref="intermediary-bank-name" minOccurs="0"/>
+                <xs:element ref="intermediary-bank-state" minOccurs="0"/>
+                <xs:element ref="intermediary-bank-country" minOccurs="0"/>
                 <xs:element ref="payment-reference" minOccurs="0"/>
+                <xs:element ref="bank-id" minOccurs="0"/>
+                <xs:element ref="bic" minOccurs="0"/>
+                <xs:element ref="bank-name" minOccurs="0"/>
+                <xs:element ref="account-id" minOccurs="0"/>
+                <xs:element ref="iban" minOccurs="0"/>
+                <xs:element ref="name-on-account" minOccurs="0"/>
+                <xs:element ref="ach-account-class" minOccurs="0"/>
+                <xs:element ref="ach-account-type" minOccurs="0"/>
+                <xs:element ref="additional-information" minOccurs="0"/>
+                <xs:element ref="sort-code" minOccurs="0"/>
+                <xs:element ref="status" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="currency-by-region">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="currency-code" minOccurs="0"/>
+                <xs:element ref="status" minOccurs="0"/>
+                <xs:element ref="payout-payment-type" minOccurs="1"/>
+                <xs:element ref="minimum-payment-amount" minOccurs="0"/>
+                <xs:element ref="reserve" minOccurs="0"/>
+                <xs:element ref="bank-details" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="regions">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="region" minOccurs="0"/>
+                <xs:element ref="default-currency" minOccurs="0"/>
+                <xs:element ref="currency-by-region" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -310,14 +494,12 @@
                 <xs:element ref="state" minOccurs="0"/>
                 <xs:element ref="tax-id" minOccurs="0"/>
                 <xs:element ref="vat-id" minOccurs="0"/>
-                <xs:element ref="default-payout-currency" minOccurs="0"/>
-                <xs:element ref="frequency" minOccurs="0"/>
-                <xs:element ref="delay" minOccurs="0"/>
-                <xs:element ref="vendor-principal" minOccurs="1"
-                            maxOccurs="1"/>
+                <xs:element ref="vendor-principal" minOccurs="1" maxOccurs="1"/>
                 <xs:element ref="payout-info" minOccurs="1" maxOccurs="unbounded"/>
                 <xs:element ref="vendor-agreement" minOccurs="0"/>
+                <xs:element ref="terms-of-service" minOccurs="0"/>
                 <xs:element ref="verification" minOccurs="0"/>
+                <xs:element ref="payout-configuration" minOccurs="0" maxOccurs="1"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -331,4 +513,6 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+
 </xs:schema>
