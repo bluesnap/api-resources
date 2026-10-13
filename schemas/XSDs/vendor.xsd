@@ -228,6 +228,12 @@
         </xs:simpleType>
     </xs:element>
 
+    <xs:element name="intermediary-bank-city">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
     <xs:element name="intermediary-bank-country">
         <xs:simpleType>
             <xs:restriction base="xs:string"/>
@@ -399,6 +405,7 @@
                 <xs:element ref="intermediary-bic" minOccurs="0"/>
                 <xs:element ref="intermediary-bank-name" minOccurs="0"/>
                 <xs:element ref="intermediary-bank-state" minOccurs="0"/>
+                <xs:element ref="intermediary-bank-city" minOccurs="0"/>
                 <xs:element ref="intermediary-bank-country" minOccurs="0"/>
                 <xs:element ref="payment-reference" minOccurs="0"/>
                 <xs:element ref="bank-id" minOccurs="0"/>
